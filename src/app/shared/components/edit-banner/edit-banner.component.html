@@ -1,36 +1,48 @@
 <div class="main-div">
-    <div class="title-container">
-        <p>{{titulo}}</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+  <div class="title-container">
+    <p>Editar banner</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <form [formGroup]="editBanner" class="content-container">
+    <div class="form-field">
+      <p class="form-field-label">Título</p>
+      <input class="form-field-input" formControlName="title" />
+      <div class="hint-div">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="667"
+          height="2"
+          viewBox="0 0 667 2"
+          fill="none"
+        >
+          <path d="M0.0324707 0.876892H666.032" stroke="black" />
+        </svg>
+        <p class="form-field-hint">Escribe un titulo</p>
+      </div>
     </div>
-    <div class="content-container">
-        <div class="form-field">
-            <p class="form-field-label">Título</p>
-            <input class="form-field-input" placeholder="Bienvenidos">
-            <div class="hint-div">
-                <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                    <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                </svg>
-                <p class="form-field-hint">Escribe un titulo</p>
-            </div>
-        </div>
-        <div class="form-field">
-            <p class="form-field-label">Texto</p>
-            <input class="form-field-input" placeholder="Encuentra todos los productos de segunda mano en eun solo sitio">
-            <div class="hint-div">
-                <svg xmlns="http://www.w3.org/2000/svg" width="667" height="2" viewBox="0 0 667 2" fill="none">
-                    <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                </svg>
-                <p class="form-field-hint">Escribe un texto que acompañe la imagen</p>
-            </div>
-        </div>
+    <div class="form-field">
+      <p class="form-field-label">Texto</p>
+      <input class="form-field-input" formControlName="text" />
+      <div class="hint-div">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="667"
+          height="2"
+          viewBox="0 0 667 2"
+          fill="none"
+        >
+          <path d="M0.0324707 0.876892H666.032" stroke="black" />
+        </svg>
+        <p class="form-field-hint">Escribe un texto que acompañe la imagen</p>
+      </div>
     </div>
-    <div class="buttons-container">
-        <button class="button cancel" (click)="close()">
-            <p>Cancelar</p>
-        </button>
-        <button class="button next" (click)="openDialog()">
-            <p>Guardar</p>
-        </button>
-    </div>
+  </form>
+  <div class="buttons-container">
+    <button class="button cancel" (click)="close()">
+      <p>Cancelar</p>
+    </button>
+    <button class="button next" (click)="guardar()">
+      <p>Guardar</p>
+    </button>
+  </div>
 </div>

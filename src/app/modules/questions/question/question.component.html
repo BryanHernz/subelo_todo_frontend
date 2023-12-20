@@ -1,63 +1,84 @@
 <div class="main-container">
-    <div class="question-breadcrumb">
-        <ul>
-            <li><a >Preguntas frecuentes</a></li>
-            <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-            <li><a >Administrar publicación</a></li>
-            <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-            <li>Publicaciones</li>
-        </ul>
+  <div class="question-breadcrumb">
+    <ul style="list-style-type: none; cursor: pointer">
+      <li [routerLink]="['/frequent-questions']">
+        <a>Preguntas frecuentes</a>
+      </li>
+      <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
+      <li [routerLink]="['/frequent-questions']">
+        {{ question.faqCategory?.name }}
+      </li>
+    </ul>
+  </div>
+  <br /><br />
+  <div class="body-container">
+    <!--<div class="search-container">
+      <img src="assets\images\iconos-generales\lupa de busqueda.svg" />
+      <input type="text" placeholder="Busca tu inquetud" />
+    </div>-->
+    <div class="content-container">
+      <br />
+      <p class="title">{{ question.question }}</p>
+      <p class="content-text">
+        Te ayudamos a resolver tus problemas con
+        {{ question.faqCategory?.name }}
+      </p>
+      <img
+        *ngIf="question.image != null && question.image != ''"
+        class="ref-image"
+        src="{{ ruta + question.image }}"
+        alt=""
+      />
+      <div class="steps-container">
+        <div class="step-container">
+          <p class="step-description">
+            {{ question.answer }}
+          </p>
+        </div>
+        <!--<div class="step-container">
+          <p class="step-number">2.</p>
+          <p class="step-description">Lee las instrucciones iniciales</p>
+        </div>
+        <div class="step-container">
+          <p class="step-number">3.</p>
+          <p class="step-description">Haz click en el botón Empezar</p>
+        </div>
+        <div class="step-container">
+          <p class="step-number">4.</p>
+          <p class="step-description">Haz click en subir fotos</p>
+        </div>
+        <div class="step-container">
+          <p class="step-number">5.</p>
+          <p class="step-description">
+            Completa el formulario y haz click en Publicar
+          </p>
+        </div>
+        <div class="step-container">
+          <p class="step-number">6.</p>
+          <p class="step-description">Listo, ya está en Súbelo Todo</p>
+        </div>-->
+      </div>
+      <div class="step-container">
+        <p class="step-description">
+          Si requieres más información, te dejamos un link complementario de
+        </p>
+        <p class="higlight-text">{{ question.faqCategory?.name }}</p>
+      </div>
+      <br />
     </div>
-    <div class="body-container">
-        <div class="search-container">
-            <img src="assets\images\iconos-generales\lupa de busqueda.svg">
-            <input type="text" placeholder="Busca tu inquetud">
-        </div>
-        <div class="content-container">
-            <p class="title">¿Cómo puedo publicar en Súbelo todo?</p>
-            <p class="content-text">No sabes como publicar, mejora tu experiencia con los siguientes pasos</p>
-            <img class="ref-image" src="assets/images/questions/how-to-publish.svg" alt="">
-            <div class="steps-container">
-                <div class="step-container">
-                    <p class="step-number">1.</p>
-                    <p class="step-description">Si estás desde una computadora, haz clic en Cómo Vender dentro de la página principal</p>
-                </div>
-                <div class="step-container">
-                    <p class="step-number">2.</p>
-                    <p class="step-description">Lee las instrucciones iniciales</p>
-                </div>
-                <div class="step-container">
-                    <p class="step-number">3.</p>
-                    <p class="step-description">Haz click en el botón Empezar</p>
-                </div>
-                <div class="step-container">
-                    <p class="step-number">4.</p>
-                    <p class="step-description">Haz click en subir fotos</p>
-                </div>
-                <div class="step-container">
-                    <p class="step-number">5.</p>
-                    <p class="step-description">Completa el formulario y haz click en Publicar</p>
-                </div>
-                <div class="step-container">
-                    <p class="step-number">6.</p>
-                    <p class="step-description">Listo, ya está en Súbelo Todo</p>
-                </div>
-            </div>
-            <div class="step-container">
-                <p class="step-description">Si requieres más información, te dejamos un link complementario de como</p>
-                <p class="higlight-text">mejorar tu publicación</p>
-            </div>
-        </div>
-        <div class="content-container-mini">
-            <p class="content-text">Queremos saber tu opinión ¿Crees que fue útil esta información? </p>
-            <div class="buttons-container">
-                <button class="button next" [routerLink]="['/product-upload/']">
-                    <p>Si</p>
-                </button>
-                <button class="button cancel">
-                    <p>No</p>
-                </button>
-            </div>
-        </div>
+    <div class="content-container-mini">
+      <p class="content-text">
+        Queremos saber tu opinión ¿Crees que fue útil esta información?
+      </p>
+      <div class="buttons-container">
+        <button class="button next" [routerLink]="['/product-upload/']">
+          <p>Si</p>
+        </button>
+        <button class="button cancel">
+          <p>No</p>
+        </button>
+      </div>
     </div>
+  </div>
+  <br />
 </div>

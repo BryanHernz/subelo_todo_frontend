@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryModel } from 'src/app/models/categoryModel';
 import { ProductModel } from 'src/app/models/productModel';
+import { CategoriesService } from 'src/app/services/categoryservice/categories.service';
 import { ProductsService } from 'src/app/services/productsservice/products.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-offers',
@@ -9,17 +12,18 @@ import { ProductsService } from 'src/app/services/productsservice/products.servi
 })
 
 export class OffersComponent implements OnInit {
-  productos:ProductModel[]=[];
-  
-  ruta:string='http://localhost:8000/'
 
-  constructor(private productserv:ProductsService) {
+  categories:CategoryModel[]=[];
+  
+  ruta:string=environment.imagesUrl
+
+  constructor(private productserv:ProductsService, private categoryserv:CategoriesService) {
     
   }
 
   ngOnInit():void{
-      this.productserv.getProducts().subscribe(data=>{
-        this.productos=data;
+      this.categoryserv.getCategoriesOffers().subscribe(data=>{
+        this.categories=data;
       })
     
   }

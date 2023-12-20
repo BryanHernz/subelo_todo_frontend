@@ -22,6 +22,18 @@ export class CategoriesService {
     return this.http.get<CategoryModel[]>(direction,{headers});
   }
 
+  getCategoriesOffers(){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/categories/offers/';
+    return this.http.get<CategoryModel[]>(direction,{headers});
+  }
+
+  getCategory(catid:number){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/categories/'+catid;
+    return this.http.get<CategoryModel>(direction,{headers});
+  }
+
   getSubcategoriesByCategory(catid:number){
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
     let direction=this.API_URI+'/subcategories/byCategory/'+catid;
@@ -39,5 +51,25 @@ export class CategoriesService {
     let direction=this.API_URI+'/categories/';
     return this.http.post<ResponseModel>(direction,form,{headers});
   }
+
+  putCategory(form:CategoryModel):Observable<ResponseModel>{
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/categories/'+form.id;
+    return this.http.put<ResponseModel>(direction,form,{headers});
+  }
   
+  postCategotyBanner(form:FormData):Observable<ResponseModel>{
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/categories/multipleFiles';
+    console.log(direction)
+    return this.http.post<ResponseModel>(direction,form,{headers});
+  }
+  
+  postCategotyIcon(form:FormData):Observable<ResponseModel>{
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/categories/multipleFiles';
+    console.log(direction)
+    return this.http.post<ResponseModel>(direction,form,{headers});
+  }
+
 }

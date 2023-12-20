@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ResponseModel } from 'src/app/models/responseModel';
 import { ShoppingCartModel } from 'src/app/models/shoppingCartModel';
+import { TbkResultModel } from 'src/app/models/tbkResultModel';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -48,5 +49,17 @@ export class ShoppingCartService {
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
     let direction=this.API_URI+'/shoppingCart/';
     return this.http.post<ResponseModel>(direction,form,{headers});
+  }
+  
+  createWebpay(data: any){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction = this.API_URI + '/shoppingCart/createWebpay/';
+    return this.http.post<ResponseModel>(direction, data, {headers});
+  }
+  
+  stateWebpay(data: string){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction = this.API_URI + '/shoppingCart/stateWebpay/'+data;
+    return this.http.get<TbkResultModel>(direction, {headers});
   }
 }

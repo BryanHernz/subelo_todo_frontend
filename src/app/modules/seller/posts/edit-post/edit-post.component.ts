@@ -11,6 +11,7 @@ import { CategoriesService } from 'src/app/services/categoryservice/categories.s
 import { CityService } from 'src/app/services/cityservice/city.service';
 import { ProductsService } from 'src/app/services/productsservice/products.service';
 import { StateService } from 'src/app/services/stateservice/state.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-edit-post',
@@ -36,7 +37,7 @@ export class EditPostComponent implements OnInit {
     'Usado - Como Nuevo',
     'Usado - Buen Estado',
     'Usado - Aceptable',];
-  ruta:string='http://localhost:8000/'
+    ruta:string=environment.imagesUrl
 
   post:ProductModel=this.data;
 
@@ -118,7 +119,7 @@ export class EditPostComponent implements OnInit {
         'price':this.editarProducto.value.price!,
         'userId':this.post.userId,
         'discount':this.editarProducto.value.referencialPrice?(((this.editarProducto.value.referencialPrice-this.editarProducto.value.price!)*100)/this.editarProducto.value.referencialPrice):0,
-        'aproved':this.post.aproved,
+        'approved':this.post.approved,
         'height':this.editarProducto.value.height!,
         'length':this.editarProducto.value.length!,
         'width':this.editarProducto.value.width!,

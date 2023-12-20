@@ -1,116 +1,42 @@
 <div class="main-container">
-    <div class="body-container">
-        <p class="main-title">¿Quieres que te ayudemos? </p>
-        <div class="search-container">
-            <img src="assets\images\iconos-generales\lupa de busqueda.svg">
-            <input type="text" placeholder="Busca tu inquetud">
-        </div>
-        <div class="content">
-            <div class="content-section">
-                <div class="section-title">
-                    <img src="assets/images/questions/administrar-publicaciones.svg" alt="">
-                    <p>Administrar publicaciones</p>
-                </div>
-                <div class="options-container">
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Publicaciones </p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Modificación de publicación</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Quitar publicaciones</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="section-title">
-                    <img src="assets/images/questions/relacionado-a-ventas.svg" alt="">
-                    <p>Todo relacionado a ventas</p>
-                </div>
-                <div class="options-container">
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Ventas, cobros y envíos</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Vendedores</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Cancelaciones de compra</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="content-section">
-                <div class="section-title">
-                    <img src="assets/images/questions/pagos.svg" alt="">
-                    <p>Pagos y transacción</p>
-                </div>
-                <div class="options-container" [routerLink]="['/question/']">
-                    <div class="option-container">
-                        <div class="option-title">
-                            <p>Pagos</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Transacción</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                    <div class="option-container" [routerLink]="['/question/']">
-                        <div class="option-title">
-                            <p>Devolución de dinero</p>
-                            <img src="assets/images/questions/right-arrow.svg" alt="">
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="855" height="2" viewBox="0 0 855 2" fill="none">
-                            <path d="M0.96344 0.889404H854.963" stroke="black"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="body-container">
+    <p class="main-title">¿Quieres que te ayudemos?</p>
+    <div class="search-container">
+      <img src="assets\images\iconos-generales\lupa de busqueda.svg" />
+      <input type="text" placeholder="Busca tu inquetud" />
     </div>
+    <div class="content">
+      <div class="content-section" *ngFor="let item of preguntasfreq">
+        <div class="section-title">
+          <!-- <img
+            src="assets/images/questions/administrar-publicaciones.svg"
+            alt=""
+          />-->
+          <p>{{ item.name }}</p>
+        </div>
+        <div class="options-container">
+          <div
+            *ngFor="let ask of item.faqs"
+            class="option-container"
+            [routerLink]="['/frequent-questions/question/' + ask.id]"
+          >
+            <div class="option-title">
+              <p>{{ ask.question }}</p>
+              <img src="assets/images/questions/right-arrow.svg" alt="" />
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="855"
+              height="2"
+              viewBox="0 0 855 2"
+              fill="none"
+            >
+              <path d="M0.96344 0.889404H854.963" stroke="black" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br /><br />
 </div>

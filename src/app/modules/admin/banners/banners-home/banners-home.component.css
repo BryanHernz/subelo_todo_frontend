@@ -118,9 +118,16 @@
     width: 203.753px;
 }
 
+.content-image-card img {
+    width: 100px;
+    height: 70px;
+    object-fit: contain;
+}
+
 .content-image-card-button {
     display: flex;
     width: 192px;
+    cursor: pointer;
     height: 34px;
     padding: 10px 10px;
     justify-content: center;
@@ -128,7 +135,6 @@
     gap: 10px;
     border-radius: 10px;
     background: #BE272D;
-    color: #FFF;
     color: #FFF;
     text-align: center;
     font-family: TitilliumWeb;

@@ -1,9 +1,14 @@
-<p>admin-notifications-see-more works!</p>
 <div class="main-div">
-    <div class="title-container">
-        <p class="title">Ver más</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
-    </div>
-    <p class="normal-text">La venta <span class="bold-text">Estufa a leña Neoflam grande ha sido cancelada</span>, comunícate con el comprador. Puede que haya faltado información del producto que podrían ser relevante para la compra de este.</p>
-    <button class="button" (click)="close()">Aceptar</button>
+  <div class="title-container">
+    <p class="title">Ver más</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <p class="normal-text">
+    La {{ notification.type }}
+    <span class="bold-text">{{ notification.product?.title }}</span> fue
+    {{ notification.state }}, comunícate con el {{ notification.support }}.
+    Puede que haya faltado información del producto que podrían ser relevante
+    para la compra de este.
+  </p>
+  <button class="button" (click)="close()">Aceptar</button>
 </div>

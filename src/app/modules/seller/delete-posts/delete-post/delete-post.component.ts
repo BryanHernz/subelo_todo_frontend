@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ProductModel } from 'src/app/models/productModel';
 import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-delete-post',
@@ -17,7 +18,7 @@ export class DeletePostComponent {
 
   post:ProductModel=this.data;
 
-  ruta:string='http://localhost:8000/'
+  ruta:string=environment.imagesUrl
   
   close(): void {
     this.dialogRef.close(true);

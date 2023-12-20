@@ -1,0 +1,151 @@
+::ng-deep .mat-mdc-dialog-container {
+    --mdc-dialog-container-color: transparent;
+    margin: 5%;
+}
+
+.main-div {
+    display: flex;
+    width: 660px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.title-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+}
+
+.title-container img {
+    width: 20.537px;
+    height: 21.738px;
+}
+
+.title-container p {
+    width: 540px;
+    color: #BE272D;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self: stretch;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.form-field {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    align-self: stretch;
+}
+
+.form-field-label {
+    align-self: stretch;
+    color: #000;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.form-field-input,
+.form-field-input::placeholder {
+    align-self: stretch;
+    color: #000;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    outline: none;
+}
+
+.form-field-hint {
+    color: #8B8989;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hint-div {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    height: 34px;
+}
+
+.buttons-container {
+    padding-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.button {
+    display: flex;
+    padding: 10px 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+}
+
+.cancel {
+    border-radius: 10px;
+    border: 1px solid #BE272D;
+    background: #FFF;
+}
+
+.cancel p {
+    padding-top: 8px;
+    color: #BE272D;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+}
+
+.next {
+    border-radius: 10px;
+    background: #BE272D;
+}
+
+.next p {
+    padding-top: 8px;
+    color: #FFF;
+    text-align: center;
+    font-family: TitilliumWeb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 155%;
+    /* 24.8px */
+    letter-spacing: 0.16px;
+}

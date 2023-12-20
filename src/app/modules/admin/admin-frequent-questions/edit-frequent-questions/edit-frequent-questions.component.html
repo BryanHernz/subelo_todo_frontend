@@ -1,36 +1,74 @@
-<div class="main-div">
-    <div class="title-row">
-        <p>Editar Preguntas frecuentes</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+<form class="main-div" [formGroup]="editfaq">
+  <div class="title-row">
+    <p>Agregar pregunta</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <div class="form-field">
+    <p class="form-field-label">Pregunta</p>
+    <input
+      class="form-field-input"
+      type="text"
+      id="validationDefault01"
+      formControlName="question"
+      required
+    />
+    <div class="hint-div">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="423"
+        height="2"
+        viewBox="0 0 423 2"
+        fill="none"
+      >
+        <path d="M0.0324707 0.876892H666.032" stroke="black" />
+      </svg>
+      <p class="form-field-hint">Escribe la pregunta que quieres agregar</p>
     </div>
-    <div class="category-container">
-        <p class="title">Ítem</p>
-        <div class="cat-row">
-            <p>Administrar publicaciones</p>
-            <button class="link-button">Editar</button>
-            <button class="link-button">Eliminar</button>
-        </div>
+  </div>
+  <div class="form-field">
+    <p class="form-field-label">Respuesta</p>
+    <input
+      class="form-field-input"
+      type="text"
+      id="validationDefault01"
+      formControlName="answer"
+      required
+    />
+    <div class="hint-div">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="423"
+        height="2"
+        viewBox="0 0 423 2"
+        fill="none"
+      >
+        <path d="M0.0324707 0.876892H666.032" stroke="black" />
+      </svg>
+      <p class="form-field-hint">
+        Escribe la respuesta ala pregunta que quieres agregar
+      </p>
     </div>
-    <div class="content-container">
-        <p class="title">Preguntas de ítem </p>
-        <div class="subcat-row">
-            <p>Publicaciones</p>
-            <button class="link-button">Editar</button>
-            <button class="link-button">Eliminar</button>
-        </div>
-        <div class="subcat-row">
-            <p>Modificación de publicaciones</p>
-            <button class="link-button">Editar</button>
-            <button class="link-button">Eliminar</button>
-        </div>
-        <div class="subcat-row">
-            <p>Quitar publicaciones</p>
-            <button class="link-button">Editar</button>
-            <button class="link-button">Eliminar</button>
-        </div>
-        <div class="add-item-row">
-            <p>Agregar preguntas de ítem</p>
-            <button class="link-button" (click)="openAddDialog()">Agregar</button>
-        </div>
-    </div>
-</div>
+  </div>
+  <br />
+  <img
+    class="imagen"
+    *ngIf="question.image != null && question.image != ''"
+    src="{{ ruta + question.image }}"
+    alt=""
+  />
+  <br />
+  <button class="content-image-card-button">
+    <input
+      type="file"
+      id="actual-btn1"
+      hidden
+      maxlength="1"
+      (change)="selectImage(1, $event)"
+    />
+    <label for="actual-btn1" class="button next">Cargar imagen</label>
+  </button>
+  <div class="buttons-container">
+    <button class="white-button" (click)="close()">Cancelar</button>
+    <button class="red-button" (click)="postquest()">Guardar</button>
+  </div>
+</form>

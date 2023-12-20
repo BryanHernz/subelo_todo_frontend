@@ -1,7 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { ValidateComponent } from '../validate/validate.component';
 import { MatDialog, } from '@angular/material/dialog';
+import { ProductsService } from 'src/app/services/productsservice/products.service';
+import { ProductModel } from 'src/app/models/productModel';
 
 @Component({
   selector: 'app-posts-validate',
@@ -9,38 +11,24 @@ import { MatDialog, } from '@angular/material/dialog';
   styleUrls: ['./posts-validate.component.css']
 })
 
-export class PostsValidateComponent {
+export class PostsValidateComponent implements OnInit {
 
-
-  solicitudes: Solicitud[] = [
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-  ];
-
-  @ViewChild(MatTable) tabla1!: MatTable<Solicitud>;
+  @ViewChild(MatTable) tabla1!: MatTable<ProductModel>;
+  posts: ProductModel[] = [];
 
   displayedColumns: string[] = ['fecha', 'publicador', 'telefono', 'mail', 'publicacion' ,'validar'];
 
   
   constructor(
-    private dialog: MatDialog,) {
+    private dialog: MatDialog,private prodservice: ProductsService) {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(ValidateComponent);
+  ngOnInit(): void {
+    this.prodservice.getProductsToApprove().subscribe(data=>{this.posts=data;})
   }
 
-}
-
-export class Solicitud {
-  constructor(public fecha: string,public publicador: string,public telefono: string,public mail: string,public publicacion: string,public validar: string,) {
+  openDialog(post:ProductModel) {
+    const dialogRef = this.dialog.open(ValidateComponent,{data:post});
   }
+
 }

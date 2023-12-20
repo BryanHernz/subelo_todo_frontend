@@ -1,44 +1,34 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
 import { SalesRegisterSeeMoreComponent } from '../sales-register-see-more/sales-register-see-more.component';
+import { OrderModel } from 'src/app/models/orderModel';
+import { OrderService } from 'src/app/services/orderservice/order.service';
 
 @Component({
   selector: 'app-sales-register',
   templateUrl: './sales-register.component.html',
   styleUrls: ['./sales-register.component.css']
 })
-export class SalesRegisterComponent {
+export class SalesRegisterComponent implements OnInit{
 
-  solicitudes: Solicitud[] = [
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-    new Solicitud('22.10.2023', 'María Carmen de la Manzana', '+56912345678', 'Maria.Carmen.M@gmail.com', 'Manta de lycra, dos plazas, con nueva...', 'Ver más'),
-  ];
+  @ViewChild(MatTable) tabla1!: MatTable<OrderModel>;
 
-  @ViewChild(MatTable) tabla1!: MatTable<Solicitud>;
+  orders: OrderModel[] = [];
 
   displayedColumns: string[] = ['fecha', 'publicador', 'telefono', 'mail', 'publicacion' ,'informacion'];
 
   
   constructor(
-    private dialog: MatDialog,) {
+    private dialog: MatDialog,private orderservice: OrderService) {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(SalesRegisterSeeMoreComponent);
+  ngOnInit(): void {
+    this.orderservice.getOrders().subscribe(data=>{this.orders=data.reverse();})
   }
 
-}
-
-export class Solicitud {
-  constructor(public fecha: string,public publicador: string,public telefono: string,public mail: string,public publicacion: string,public informacion: string,) {
+  openDialog(order:OrderModel) {
+    const dialogRef = this.dialog.open(SalesRegisterSeeMoreComponent,{data:order});
   }
+
 }

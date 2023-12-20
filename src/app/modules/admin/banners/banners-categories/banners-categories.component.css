@@ -115,6 +115,12 @@
     flex: 1 0 0;
 }
 
+.content-image-card img {
+    width: 100px;
+    height: 40px;
+    object-fit: contain;
+}
+
 .imagen-row {
     display: flex;
     width: 408px;

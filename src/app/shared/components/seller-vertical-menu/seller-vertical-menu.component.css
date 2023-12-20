@@ -8,6 +8,12 @@
     background: #FFF;
 }
 
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 .header-container-sel {
     display: flex;
     padding: 5px 10px;

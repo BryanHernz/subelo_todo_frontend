@@ -23,7 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FooterComponent, BreadcrumbComponent } from '@coreui/angular';
+import { BreadcrumbComponent, CarouselModule } from '@coreui/angular';
 import { AdminVerticalMenuComponent } from './shared/components/admin-vertical-menu/admin-vertical-menu.component';
 import { AlertDialogComponent } from './shared/components/alert-dialog/alert-dialog.component';
 import { ConfirmationDialogComponent } from './shared/components/confirmation-dialog/confirmation-dialog.component';
@@ -80,6 +80,23 @@ import { AddCategoryComponent } from './modules/admin/categories/add-category/ad
 import { DeletePostsSeeMoreComponent } from './modules/seller/delete-posts/delete-posts-see-more/delete-posts-see-more.component';
 import { DeletePostComponent } from './modules/seller/delete-posts/delete-post/delete-post.component';
 import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.component';
+import { GalleriaModule } from 'primeng/galleria';
+import { PostTbkComponent } from './shared/post-tbk/post-tbk.component';
+import { CategoriesLocationsMenuComponent } from './shared/components/categories-locations-menu/categories-locations-menu.component';
+import { PurchasesComponent } from './modules/seller/purchases/purchases/purchases.component'; 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { CompletedSalesSeeMoreComponent } from './modules/seller/completed-sales/completed-sales-see-more/completed-sales-see-more.component';
+import { PurchasesSeeMoreComponent } from './modules/seller/purchases/purchases-see-more/purchases-see-more.component';
+import { RejectPurchaseComponent } from './modules/seller/purchases/reject-purchase/reject-purchase.component';
+import { RejectedSalesSeeMoreComponent } from './modules/seller/rejected-sales/rejected-sales-see-more/rejected-sales-see-more.component';
+import { DeliverSellComponent } from './modules/seller/completed-sales/deliver-sell/deliver-sell.component';
+import { SalesRegisterSeeMoreComponent } from './modules/admin/posts/posts-control/sales-register-see-more/sales-register-see-more.component';
+import { AddQuestionCategoryComponent } from './modules/admin/admin-frequent-questions/add-question-category/add-question-category.component';
+import { AddQuestionComponent } from './modules/admin/admin-frequent-questions/add-question/add-question.component';
+import { EditQuestionCategoryComponent } from './modules/admin/admin-frequent-questions/edit-question-category/edit-question-category.component';
+import { QuestionsProductComponent } from './shared/components/questions-product/questions-product.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 
@@ -94,9 +111,11 @@ import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.com
         AdminNotificationsMarkReadComponent,
         AdminNotificationsSeeMoreComponent,
         AdminPaymentsEditDataComponent,
+        SalesRegisterSeeMoreComponent,
         NumericInputComponent,
         SwiperGalleryComponent,
         SellerVerticalMenuComponent,
+        FooterComponent,
         AdminVerticalMenuComponent,
         AlertDialogComponent,
         UploadImageComponent,
@@ -104,20 +123,22 @@ import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.com
         DeletePostComponent,
         ConfirmationDialogComponent,
         LogoutComponent,
+        NavComponent,
         DeletePostsSeeMoreComponent,
         SigninComponent,
         HomeComponent,
         SalesRegisterComponent,
         EditAdminDataComponent,
         PostsFormComponent,
+        RejectedSalesSeeMoreComponent,
         PostsComponent,
         SellersComponent,
         SellComponent,
+        PurchasesSeeMoreComponent,
         RejectedSalesComponent,
         SellerPostsComponent,
         SellerDataComponent,
         AdminDataComponent,
-        NavComponent,
         PostsControlComponent,
         EditSellerDataComponent,
         PaymentsComponent,
@@ -148,15 +169,25 @@ import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.com
         BannersCategoriesComponent,
         SignupComponent,
         DeleteDialogComponent,
+        PostTbkComponent,
+        CategoriesLocationsMenuComponent,
+        PurchasesComponent,
+        CompletedSalesSeeMoreComponent,
+        RejectPurchaseComponent,
+        DeliverSellComponent,
+        AddQuestionCategoryComponent,
+        AddQuestionComponent,
+        EditQuestionCategoryComponent,
+        QuestionsProductComponent
     ],
     providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }],
     bootstrap: [AppComponent],
     imports: [
         MatCardModule,
+        CarouselModule, 
+        FormsModule, 
         BrowserModule,
         AppRoutingModule,
-        FooterComponent,
-        BreadcrumbComponent,
         BrowserAnimationsModule,
         MatDialogModule,
         MatInputModule,
@@ -164,7 +195,6 @@ import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.com
         ReactiveFormsModule,
         HttpClientModule,
         BreadcrumbComponent,
-        FooterComponent,
         CommonModule,
         MatIconModule,
         MatToolbarModule,
@@ -173,12 +203,16 @@ import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.com
         FlexLayoutModule,
         RouterLink,
         FormsModule,
+        GalleriaModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
       ],
       exports: [
-        FooterComponent,
         BreadcrumbComponent,
         NumericInputComponent,
         NavComponent,
+        FooterComponent,
         SellerVerticalMenuComponent,
         AdminVerticalMenuComponent,
         AlertDialogComponent,

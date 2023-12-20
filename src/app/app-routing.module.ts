@@ -24,8 +24,6 @@ import { BannersComponent } from './modules/admin/banners/banners/banners.compon
 import { BannersHomeComponent } from './modules/admin/banners/banners-home/banners-home.component';
 import { BannersCategoriesComponent } from './modules/admin/banners/banners-categories/banners-categories.component';
 import { BannersOthersComponent } from './modules/admin/banners/banners-others/banners-others.component';
-import { PostsComponent } from './modules/admin/posts/posts/posts.component';
-import { PostsFormComponent } from './modules/admin/posts/posts-form/posts-form/posts-form.component';
 import { PostsControlComponent } from './modules/admin/posts/posts-control/posts-control/posts-control.component';
 import { PostsValidateComponent } from './modules/admin/posts/posts-control/posts-validate/posts-validate.component';
 import { SalesRegisterComponent } from './modules/admin/posts/posts-control/sales-register/sales-register.component';
@@ -36,6 +34,8 @@ import { MetricsComponent } from './modules/admin/metrics/metrics.component';
 import { AdminNotificationsComponent } from './modules/admin/notifications/admin-notifications/admin-notifications.component';
 import { AdminPaymentsComponent } from './modules/admin/payments/admin-payments/admin-payments.component';
 import { ShoppingCartComponent } from './modules/shopping-cart/shopping-cart.component';
+import { PostTbkComponent } from './shared/post-tbk/post-tbk.component';
+import { PurchasesComponent } from './modules/seller/purchases/purchases/purchases.component';
 
 const routes: Routes = [
   { 
@@ -51,7 +51,7 @@ const routes: Routes = [
     component:OffersComponent,
   },
   {
-    path: 'offers2',
+    path: 'offers2/:id',
     component:Offers2Component,
   },
   { path: 'how-to-sale',
@@ -65,7 +65,7 @@ const routes: Routes = [
   { path: 'frequent-questions',
     children: [
       { path: '', component:FrequentQuestionsComponent },
-      { path: 'question', component:QuestionComponent },
+      { path: 'question/:id', component:QuestionComponent },
     ]
   },
   {
@@ -77,6 +77,7 @@ const routes: Routes = [
       { path: 'seller-data', component:SellerDataComponent },
       { path: 'sell', component:SellComponent },
       { path: 'seller-posts', component:SellerPostsComponent },
+      { path: 'seller-purchases', component:PurchasesComponent },
       { path: 'completed-sales', component:CompletedSalesComponent },
       { path: 'rejected-sales', component:RejectedSalesComponent },
       { path: 'delete-posts', component:DeletePostsComponent },
@@ -131,6 +132,10 @@ const routes: Routes = [
   {
     path: 'shopping-cart',
     component:ShoppingCartComponent,
+  },
+  {
+    path: 'posttbk',
+    component:PostTbkComponent,
   },
   {
     path: '',

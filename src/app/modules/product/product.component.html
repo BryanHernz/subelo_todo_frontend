@@ -6,24 +6,55 @@
     <div class="images-section">
       <div class="title-container">
         <p class="title">
-          {{ product.title }}
+          {{ product.title.toUpperCase() }}
         </p>
-        <app-swiper-gallery
-          [data]="product.ProductImages!"
-        ></app-swiper-gallery>
+        <p-galleria
+          [value]="img"
+          [verticalThumbnailViewPortHeight]="'300px'"
+          [numVisible]="3"
+          [thumbnailsPosition]="'left'"
+        >
+          <ng-template pTemplate="item" let-img>
+            <img
+              [src]="img.URL"
+              height="400px"
+              style="display: block; object-fit: contain"
+              width="300px"
+            />
+          </ng-template>
+          <ng-template pTemplate="thumbnail" let-img>
+            <div class="grid grid-nogutter justify-content-center">
+              <img
+                [src]="img.URL"
+                height="80px"
+                width="80px"
+                style="object-fit: contain; padding: 0px"
+              />
+            </div>
+          </ng-template>
+        </p-galleria>
       </div>
     </div>
     <div class="details-container">
       <div class="data-container">
         <div class="price-container">
           <p class="price">
-            {{ product.price | currency : "CLP" : "symbol-narrow" }} CLP
+            {{
+              (product.price | currency : "CLP" : "symbol-narrow")!.replaceAll(
+                ",",
+                "."
+              )
+            }}
+            CLP
           </p>
         </div>
         <div class="ref-price-container">
           <p class="ref-price">
             Precio referencial:
-            {{ product.referencialPrice | currency : "CLP" : "symbol-narrow" }}
+            {{
+              (product.referencialPrice
+                | currency : "CLP" : "symbol-narrow")!.replaceAll(",", ".")
+            }}
           </p>
         </div>
         <div class="description-container">
@@ -55,8 +86,20 @@
             Contacto:
             {{ product.user?.phone }}
           </div>
-          <div class="buy-button" (click)="addToCart()">
+
+          <button (click)="showQuestions(product)" class="ask-button">
+            Preguntas
+          </button>
+          <div
+            [(ngModel)]="enable"
+            *ngIf="enable"
+            class="buy-button"
+            (click)="enable ? addToCart() : null"
+          >
             <p>Agregar a carro</p>
+          </div>
+          <div [(ngModel)]="enable" *ngIf="!enable" class="buy-button">
+            <p>Unidades agotadas</p>
           </div>
         </div>
       </div>
@@ -77,30 +120,39 @@
         </svg>
       </div>
     </div>
-    <div class="recomendations">
-      <img
-        class="imgIcon"
-        src="assets/images/iconos-generales/LeftCircle.svg"
-        alt=""
-      />
-      <div class="recomendation-card" *ngFor="let item of productsCards">
-        <img src="{{ item.photo }}" alt="Imagen" />
-        <div class="recomedation-info">
-          <p class="recomendation-title">{{ item.name }}</p>
-          <p class="recomendation-price">
-            {{ item.price | currency : "CLP" : "symbol-narrow" }}
-          </p>
-          <button class="recomendation-button">
-            <p>Ver más</p>
-          </button>
+    <swiper-container
+      class="mySwiper"
+      navigation="true"
+      navigationColor="#be272d"
+      pagination="true"
+      keyboard="true"
+      css-mode="true"
+      slides-per-view="3"
+      rewind="true"
+    >
+      <swiper-slide *ngFor="let product of products">
+        <div class="recomendation-card">
+          <img
+            src="{{ ruta + product.ProductImages![0].filePath }}"
+            alt="Imagen"
+          />
+          <div class="recomedation-info">
+            <p
+              class="recomendation-title"
+              style="max-lines: 2; overflow-y: hidden"
+            >
+              {{ product.title }}
+            </p>
+            <p class="recomendation-price">
+              {{ product.price | currency : "CLP" : "symbol-narrow" }}
+            </p>
+            <button class="recomendation-button">
+              <p [routerLink]="['/product']">Ver más</p>
+            </button>
+          </div>
         </div>
-      </div>
-      <img
-        class="imgIcon"
-        src="assets/images/iconos-generales/RightCircle.svg"
-        alt=""
-      />
-    </div>
+      </swiper-slide>
+    </swiper-container>
   </div>
 </div>
 

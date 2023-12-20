@@ -35,14 +35,24 @@
         <br />
         <div class="container">
           <p class="total">
-            Total:
-            {{
-              (calcularTotal() | currency : "CLP" : "$")?.replaceAll(",", ".")
-            }}
+            Total: {{ total | currency : "CLP" : "symbol-narrow" : "1.0-0" }}
           </p>
           <button class="row-button-red" (click)="tbkProcess()">
             Finalizar compra
           </button>
+
+          <form
+            [hidden]="true"
+            #webpayForm
+            action="{{ responseWebpay.return_url }}"
+            method="post"
+          >
+            <input
+              type="hidden"
+              name="token_ws"
+              value="{{ responseWebpay.token }}"
+            />
+          </form>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
     margin: 5%;
 }
 
-.main-div{
+.main-div {
     display: flex;
     padding: 40px;
     flex-direction: column;
@@ -14,7 +14,7 @@
     background: #FFF;
 }
 
-.title-row{
+.title-row {
     display: flex;
     align-items: center;
     gap: 13px;
@@ -22,7 +22,7 @@
     justify-content: end;
 }
 
-.title-row p{
+.title-row p {
     color: #BE272D;
     font-family: Inter;
     font-size: 18px;
@@ -32,39 +32,38 @@
     flex: 1 0 0;
 }
 
-.title-row img{
+.title-row img {
     width: 20px;
     height: 24px;
 }
 
-.sale-container{
+.sale-container {
     display: flex;
     padding: 20px;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     border-radius: 10px;
-
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.product-row{
+.product-row {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     align-self: stretch;
 }
 
-.product-row img{
+.product-row img {
     flex: 1 0 0;
     align-self: stretch;
     height: 50px;
     width: 62px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-.bold-text{
+.bold-text {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
@@ -76,18 +75,19 @@
     align-self: stretch;
 }
 
-.normal-text{
+.normal-text {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;/* 24.8px */
+    font-weight: 400;
+    /* 24.8px */
     letter-spacing: 0.32px;
     align-self: stretch;
     text-align: end;
 }
 
-.green-text{
+.green-text {
     color: #128C16;
     font-family: Roboto;
     font-size: 16px;
@@ -97,18 +97,19 @@
     align-self: stretch;
 }
 
-.normal-text2{
+.normal-text2 {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;/* 24.8px */
+    font-weight: 400;
+    /* 24.8px */
     letter-spacing: 0.32px;
     align-self: stretch;
     text-align: end;
 }
 
-.red-text2{
+.red-text2 {
     color: #BE272D;
     font-family: Roboto;
     font-size: 16px;
@@ -119,47 +120,47 @@
     text-align: end;
 }
 
-.data-column{
+.data-column {
     width: min-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.venta-row{
+.venta-row {
     display: flex;
     align-items: flex-start;
     gap: 20px;
 }
 
-.venta-data-column{
+.venta-data-column {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.data-row{
+.data-row {
     display: flex;
     align-items: stretch;
     gap: 20px;
     align-self: stretch;
 }
 
-.motive-row{
+.motive-row {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     align-self: stretch;
 }
 
-.button-container{
+.button-container {
     display: flex;
     width: 474px;
     align-items: flex-start;
     gap: 40px;
 }
 
-.button-red{
+.button-red {
     display: flex;
     padding: 10px 0px;
     justify-content: center;
@@ -167,18 +168,19 @@
     flex: 1 0 0;
     border-radius: 10px;
     background: #BE272D;
-    width: 217px    ;
+    width: 217px;
     color: #FFF;
     text-align: center;
     font-family: TitilliumWeb;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.button-white{
+.button-white {
     display: flex;
     padding: 10px 0px;
     justify-content: center;
@@ -194,6 +196,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }

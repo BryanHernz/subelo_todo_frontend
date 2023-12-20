@@ -1,72 +1,116 @@
 <div class="main-container">
-    <div class="header-container" style="background: url('../assets/images/how-to-sell/como vender.svg'), lightgray 50% / cover no-repeat;">
-        <div class="breadcrumb">
-            <ul>
-                <li><a >Cómo vender</a></li>
-                <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-                <li>Sube tu producto</li>
-            </ul>
-        </div>
-        <div class="title-container">
-            <p class="title">VENDE TUS PRODUCTOS</p>
-            <p class="subtitle">Si quieres subir tu producto a la página, rellena el siguiente formulario y ¡Listo!</p>
-        </div>
+  <div
+    class="header-container"
+    style="
+      background: url('../assets/images/how-to-sell/como vender.svg'),
+        lightgray 50% / cover no-repeat;
+    "
+  >
+    <div class="breadcrumb">
+      <ul>
+        <li><a>Cómo vender</a></li>
+        <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
+        <li>Sube tu producto</li>
+      </ul>
     </div>
-    <div class="body-card">
-        <p class="card-title">1. Registra tus datos</p>
-        <div class="card-contain">
-            <div class="fields-container">
-                <div class="form-field">
-                    <p class="form-field-label">Nombre y Apellido</p>
-                    <input class="form-field-input" placeholder="Nombre Predeterminado por mail">
-                    <div class="hint-div">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="401" height="2" viewBox="0 0 401 2" fill="none">
-                            <path d="M0.785522 1.4234H400.786" stroke="black"/>
-                        </svg>
-                        <p class="form-field-hint">Escribe por lo menos 10 letras</p>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <p class="form-field-label">RUT</p>
-                    <input class="form-field-input" placeholder="">
-                    <div class="hint-div">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="401" height="2" viewBox="0 0 401 2" fill="none">
-                            <path d="M0.785522 1.4234H400.786" stroke="black"/>
-                        </svg>
-                        <p class="form-field-hint">Escribe tu rut</p>
-                    </div>
-                </div>
-            </div>
-            <div class="fields-container">
-                <div class="form-field">
-                    <p class="form-field-label">Teléfono</p>
-                    <input class="form-field-input" placeholder="">
-                    <div class="hint-div">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="401" height="2" viewBox="0 0 401 2" fill="none">
-                            <path d="M0.785522 1.4234H400.786" stroke="black"/>
-                        </svg>
-                        <p class="form-field-hint">Escribe tu teléfono, agrega 09 al principio de tu número</p>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <p class="form-field-label">Email</p>
-                    <input class="form-field-input" placeholder="hola.predeterminado@mail.cl">
-                    <div class="hint-div">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="401" height="2" viewBox="0 0 401 2" fill="none">
-                            <path d="M0.785522 1.4234H400.786" stroke="black"/>
-                        </svg>
-                        <p class="form-field-hint">Escribe email</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="buttons-container">
-            <button class="button cancel" (click)="back()">
-                <p>Cancelar</p>
-            </button>
-            <button class="button next" [routerLink]="['/product-upload/']">
-                <p>Siguiente</p>
-            </button>
-        </div>
+    <div class="title-container">
+      <p class="title">VENDE TUS PRODUCTOS</p>
+      <p class="subtitle">
+        Si quieres subir tu producto a la página, rellena el siguiente
+        formulario y ¡Listo!
+      </p>
     </div>
+  </div>
+  <div class="body-card">
+    <p class="card-title">1. Registra tus datos</p>
+    <div class="card-contain">
+      <div class="fields-container">
+        <div class="form-field">
+          <p class="form-field-label">Nombre y Apellido</p>
+          <input
+            class="form-field-input"
+            placeholder="Nombre Predeterminado por mail"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe por lo menos 10 letras</p>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">RUT</p>
+          <input class="form-field-input" placeholder="" />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe tu rut</p>
+          </div>
+        </div>
+      </div>
+      <div class="fields-container">
+        <div class="form-field">
+          <p class="form-field-label">Teléfono</p>
+          <input class="form-field-input" placeholder="" />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+            <p class="form-field-hint">
+              Escribe tu teléfono, agrega 09 al principio de tu número
+            </p>
+          </div>
+        </div>
+        <div class="form-field">
+          <p class="form-field-label">Email</p>
+          <input
+            class="form-field-input"
+            placeholder="hola.predeterminado@mail.cl"
+          />
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="401"
+              height="2"
+              viewBox="0 0 401 2"
+              fill="none"
+            >
+              <path d="M0.785522 1.4234H400.786" stroke="black" />
+            </svg>
+            <p class="form-field-hint">Escribe email</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-container">
+      <button class="button cancel" (click)="back()">
+        <p>Cancelar</p>
+      </button>
+      <button
+        class="button next"
+        [routerLink]="['/how-to-sale/product-upload/']"
+      >
+        <p>Siguiente</p>
+      </button>
+    </div>
+  </div>
 </div>

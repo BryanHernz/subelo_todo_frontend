@@ -1,24 +1,30 @@
 <div class="body-container">
-    <div class="header-container">
-        <img src="assets/images/how-to-sell/how-to-sell4.svg" alt="">
+  <div class="header-container">
+    <img src="assets/images/how-to-sell/how-to-sell4.svg" alt="" />
+  </div>
+  <p class="title">Compra y venden súbelo todo</p>
+  <p class="description">
+    Consigue los mejores precios y gana dinero con lo que no utilizas
+  </p>
+  <div class="buttons-container">
+    <button class="optional-button">
+      <p>Continuar con Facebook</p>
+    </button>
+    <button class="optional-button">
+      <p>Continuar con Google</p>
+    </button>
+    <button
+      class="ingress-button"
+      [routerLink]="['/how-to-sale/product-register/']"
+      (click)="close()"
+    >
+      <p>Continuar con tu E-mail</p>
+    </button>
+  </div>
+  <div class="footer-container">
+    <p class="question-text">¿Ya tienes cuenta?</p>
+    <div class="footer-link-container">
+      <p class="link-text">Iniciar sesión</p>
     </div>
-    <p class="title">Compra y venden súbelo todo</p>
-    <p class="description">Consigue los mejores precios y gana dinero con lo que no utilizas</p>
-    <div class="buttons-container">
-        <button class="optional-button">
-            <p>Continuar con Facebook</p>
-        </button>
-        <button class="optional-button">
-            <p>Continuar con Google</p>
-        </button>
-        <button class="ingress-button" [routerLink]="['/product-register/']" (click)="close()">
-            <p>Continuar con tu E-mail</p>
-        </button>
-    </div>
-    <div class="footer-container">
-        <p class="question-text">¿Ya tienes cuenta?</p>
-        <div class="footer-link-container">
-            <p class="link-text">Iniciar sesión</p>
-        </div>
-    </div>
+  </div>
 </div>

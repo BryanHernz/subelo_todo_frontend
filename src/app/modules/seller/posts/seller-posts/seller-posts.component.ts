@@ -4,6 +4,7 @@ import { SeeMoreComponent } from '../see-more/see-more.component';
 import { ProductModel } from 'src/app/models/productModel';
 import { ProductsService } from 'src/app/services/productsservice/products.service';
 import { DeleteDialogComponent } from 'src/app/shared/components/delete-dialog/delete-dialog.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-seller-posts',
@@ -16,7 +17,7 @@ export class SellerPostsComponent implements OnInit {
   posts:ProductModel[]=[];
   productos:ProductModel[]=[];
   
-  ruta:string='http://localhost:8000/'
+  ruta:string=environment.imagesUrl
 
   constructor(private dialog: MatDialog,private productserv:ProductsService) {
     this.allChecked=false;

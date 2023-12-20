@@ -1,0 +1,60 @@
+<form [formGroup]="newreject">
+  <div class="main-div">
+    <div class="title-container">
+      <p>Rechazar compra de {{ orden.product?.title?.toLowerCase() }}</p>
+      <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+    </div>
+    <div class="content-container">
+      <div class="form-field">
+        <p class="form-field-label">Motivo</p>
+        <input
+          class="form-field-input"
+          formControlName="rejectedTitle"
+          required
+        />
+        <div class="hint-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="667"
+            height="2"
+            viewBox="0 0 667 2"
+            fill="none"
+          >
+            <path d="M0.0324707 0.876892H666.032" stroke="black" />
+          </svg>
+          <p class="form-field-hint">Escribe un motivo</p>
+        </div>
+      </div>
+      <div class="form-field">
+        <p class="form-field-label">Especificación</p>
+        <input
+          class="form-field-input"
+          formControlName="rejectedDescription"
+          required
+        />
+        <div class="hint-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="667"
+            height="2"
+            viewBox="0 0 667 2"
+            fill="none"
+          >
+            <path d="M0.0324707 0.876892H666.032" stroke="black" />
+          </svg>
+          <p class="form-field-hint">
+            Escribe un texto que explique el motivo con más detalles
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-container">
+      <button class="button cancel" (click)="close()">
+        <p>Cancelar</p>
+      </button>
+      <button class="button next" (click)="reject()">
+        <p>Rechazar</p>
+      </button>
+    </div>
+  </div>
+</form>

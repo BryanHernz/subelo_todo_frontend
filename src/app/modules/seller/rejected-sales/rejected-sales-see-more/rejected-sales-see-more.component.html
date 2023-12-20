@@ -1,101 +1,158 @@
 <div class="main-div">
-    <div class="title-row">
-        <p>Detalle de venta rechazada</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
+  <div class="title-row">
+    <p>Detalle de venta rechazada</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <div class="sale-container">
+    <div class="product-row">
+      <img
+        src="{{ ruta + order.product?.ProductImages?.at(0)?.filePath }}"
+        alt=""
+      />
+      <p class="bold-text">{{ order.product?.title }}</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2"
+        height="51"
+        viewBox="0 0 2 51"
+        fill="none"
+      >
+        <path d="M0.973145 0.194946V50.1949" stroke="black" />
+      </svg>
+      <div class="data-column" style="width: 66px">
+        <p class="bold-text">Cantidad</p>
+        <p class="normal-text">01</p>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2"
+        height="51"
+        viewBox="0 0 2 51"
+        fill="none"
+      >
+        <path d="M0.973145 0.194946V50.1949" stroke="black" />
+      </svg>
+      <div class="data-column" style="width: 131px">
+        <p class="bold-text">N° de venta</p>
+        <p class="normal-text">0000{{ order.id }}</p>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2"
+        height="51"
+        viewBox="0 0 2 51"
+        fill="none"
+      >
+        <path d="M0.973145 0.194946V50.1949" stroke="black" />
+      </svg>
+      <div class="data-column" style="width: 100px">
+        <p class="bold-text">Precio</p>
+        <p class="normal-text">
+          {{ (order.price | currency : "CLP" : "$")?.replaceAll(",", ".") }}
+        </p>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2"
+        height="51"
+        viewBox="0 0 2 51"
+        fill="none"
+      >
+        <path d="M0.973145 0.194946V50.1949" stroke="black" />
+      </svg>
+      <div class="data-column" style="width: 72px">
+        <p class="bold-text">Categoría</p>
+        <p class="normal-text">{{ order.product?.category?.name }}</p>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2"
+        height="51"
+        viewBox="0 0 2 51"
+        fill="none"
+      >
+        <path d="M0.973145 0.194946V50.1949" stroke="black" />
+      </svg>
+      <div class="data-column" style="width: 150px">
+        <p class="bold-text">Estado de producto</p>
+        <p class="normal-text">{{ order.product?.condition }}</p>
+      </div>
     </div>
-    <div class="sale-container">
-        <div class="product-row">
-            <img src="assets/images/imagenes-productos/fotografi╠üa 2 estufa de len╠âa.jpg" alt="">
-            <p class="bold-text">Estufa a leña Neoflam grande </p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="51" viewBox="0 0 2 51" fill="none">
-                <path d="M0.973145 0.194946V50.1949" stroke="black"/>
-            </svg>
-            <div class="data-column" style="width: 66px;">
-                <p class="bold-text">Cantidad </p>
-                <p class="normal-text">01</p>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="51" viewBox="0 0 2 51" fill="none">
-                <path d="M0.973145 0.194946V50.1949" stroke="black"/>
-            </svg>
-            <div class="data-column" style="width: 131px;">
-                <p class="bold-text">N° de venta</p>
-                <p class="normal-text">12345678900909</p>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="51" viewBox="0 0 2 51" fill="none">
-                <path d="M0.973145 0.194946V50.1949" stroke="black"/>
-            </svg>
-            <div class="data-column" style="width: 100px;">
-                <p class="bold-text">Precio </p>
-                <p class="normal-text">$70.000 CLP</p>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="51" viewBox="0 0 2 51" fill="none">
-                <path d="M0.973145 0.194946V50.1949" stroke="black"/>
-            </svg>
-            <div class="data-column" style="width: 72px;">
-                <p class="bold-text">Categoría</p>
-                <p class="normal-text">Hogar</p>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="51" viewBox="0 0 2 51" fill="none">
-                <path d="M0.973145 0.194946V50.1949" stroke="black"/>
-            </svg>
-            <div class="data-column" style="width: 150px;">
-                <p class="bold-text">Estado de producto</p>
-                <p class="normal-text">Usado. Como nuevo</p>
-            </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="980"
+      height="2"
+      viewBox="0 0 980 2"
+      fill="none"
+    >
+      <path d="M0.973145 1.19495H979.867" stroke="black" />
+    </svg>
+    <div class="venta-row">
+      <div class="venta-data-column" style="width: 340px">
+        <div class="data-row">
+          <p class="bold-text" style="width: 117px">Estado de venta</p>
+          <p class="red-text2" style="width: 209px">Venta cancelada</p>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="980" height="2" viewBox="0 0 980 2" fill="none">
-            <path d="M0.973145 1.19495H979.867" stroke="black"/>
-        </svg>
-        <div class="venta-row">
-            <div class="venta-data-column" style="width: 340px;">
-                <div class="data-row">
-                    <p class="bold-text" style="width: 117px;">Estado de venta</p>
-                    <p class="red-text2" style="width: 209px;">Venta cancelada</p>
-                </div>
-                <div class="data-row">
-                    <p class="bold-text" style="width: 192px;">Fecha de venta entregada</p>
-                    <p class="normal-text2" style="width: 150px;">09 de Agosto 2023</p>
-                </div>
-            </div>
-            <div class="venta-data-column" style="width: 375px;">
-                <div class="data-row">
-                    <p class="bold-text" style="width: 166px;">Nombre de comprador</p>
-                    <p class="normal-text2" style="width: 190px;">Jaime Rodriguez Fuentes</p>
-                </div>
-                <div class="data-row">
-                    <p class="bold-text" style="width: 146px;">Número de teléfono</p>
-                    <p class="normal-text2" style="width: 203px;">+56912345678</p>
-                </div>
-                <div class="data-row">
-                    <p class="bold-text" style="width: 41px;">Email</p>
-                    <p class="normal-text2" style="width: 308px;">Fran.villalo.L@gmail.com</p>
-                </div>
-            </div>
-            <div class="venta-data-column" style="width: 224px;">
-                <div class="data-row">
-                    <p class="bold-text" style="width: 96px;">Tipo de pago</p>
-                    <p class="red-text2" style="width: 108px;">cancelado</p>
-                </div>
-                <div class="data-row">
-                    <p class="bold-text" style="width: 102px;">Cuotas </p>
-                    <p class="normal-text2" style="width: 102px;">-------------</p>
-                </div>
-            </div>
+        <div class="data-row">
+          <p class="bold-text" style="width: 192px">Fecha de venta cancelada</p>
+          <p class="normal-text2" style="width: 150px">
+            {{ order.updatedAt | date : "dd / MM / yyyy" : "es" }}
+          </p>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="980" height="2" viewBox="0 0 980 2" fill="none">
-            <path d="M0.973145 1.19495H979.867" stroke="black"/>
-        </svg>
-        <div class="motive-row">
-            <p class="bold-text" style="width: 80px;">Motivo</p>
-            <p class="normal-text">No es lo que esperaba</p>
+      </div>
+      <div class="venta-data-column" style="width: 375px">
+        <div class="data-row">
+          <p class="bold-text" style="width: 166px">Nombre de comprador</p>
+          <p class="normal-text2" style="width: 190px">
+            {{ order.user?.firstName }} {{ order.user?.lastName }}
+          </p>
         </div>
-        <div class="motive-row">
-            <p class="bold-text" style="width: 80px;">Específica</p>
-            <p class="normal-text">La estufa si bien tiene un buen precio, está en bastante mal estado en comparación a lo que se decía en la publicación, sale que es usada-como nueva y la verdad no es así.</p>
+        <div class="data-row">
+          <p class="bold-text" style="width: 146px">Número de teléfono</p>
+          <p class="normal-text2" style="width: 203px">
+            {{ order.user?.phone }}
+          </p>
         </div>
-        <div class="button-container">
-            <button class="button-red">Contactar cliente por email </button>
-            <button class="button-white">Contactar cliente por Celular</button>
+        <div class="data-row">
+          <p class="bold-text" style="width: 41px">Email</p>
+          <p class="normal-text2" style="width: 308px">
+            {{ order.user?.email }}
+          </p>
         </div>
+      </div>
+      <div class="venta-data-column" style="width: 224px">
+        <div class="data-row">
+          <p class="bold-text" style="width: 96px">Tipo de pago</p>
+          <p class="red-text2" style="width: 108px">cancelado</p>
+        </div>
+        <div class="data-row">
+          <p class="bold-text" style="width: 102px">Cuotas</p>
+          <p class="normal-text2" style="width: 102px">-------------</p>
+        </div>
+      </div>
     </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="980"
+      height="2"
+      viewBox="0 0 980 2"
+      fill="none"
+    >
+      <path d="M0.973145 1.19495H979.867" stroke="black" />
+    </svg>
+    <div class="motive-row">
+      <p class="bold-text" style="width: 80px">Motivo</p>
+      <p class="normal-text">{{ order.rejectedTitle }}</p>
+    </div>
+    <div class="motive-row">
+      <p class="bold-text" style="width: 80px">Específica</p>
+      <p class="normal-text">
+        {{ order.rejectedDescription }}
+      </p>
+    </div>
+    <!--<div class="button-container">
+      <button class="button-red">Contactar cliente por email</button>
+      <button class="button-white">Contactar cliente por Celular</button>
+    </div>-->
+  </div>
 </div>

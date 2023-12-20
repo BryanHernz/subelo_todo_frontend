@@ -1,0 +1,39 @@
+<div class="main-div">
+  <div class="main-container">
+    <div class="carrito-container">
+      <h2>Resultado de compra</h2>
+
+      <div class="carrito-resumen">
+        <h3>Resultado de compra: {{ tbkResult.status }}</h3>
+        <div class="carrito-resumen-container">
+          <div class="carrito-resumen-container-item">
+            <p>Orden de compra</p>
+            <p>{{ tbkResult.buy_order }}</p>
+          </div>
+          <div class="carrito-resumen-container-item">
+            <p>Id de sesión</p>
+            <p>{{ tbkResult.session_id }}</p>
+          </div>
+          <div class="carrito-resumen-container-item">
+            <p>Tarjeta</p>
+            <p>xxxx xxxx xxxx {{ tbkResult.card_detail.card_number }}</p>
+          </div>
+          <div class="carrito-resumen-container-item">
+            <p>Vci</p>
+            <p>{{ tbkResult.vci }}</p>
+          </div>
+          <div class="carrito-resumen-container-item">
+            <p>Tipo de pago</p>
+            <p>{{ tbkResult.payment_type_code }}</p>
+          </div>
+          <div class="carrito-resumen-container-item">
+            <p>Cantidad de cuotas</p>
+            <p>{{ tbkResult.installments_number }}</p>
+          </div>
+          <br />
+          <div class="row-button-red" [routerLink]="['/home']">Acpetar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

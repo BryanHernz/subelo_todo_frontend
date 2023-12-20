@@ -1,0 +1,43 @@
+<div class="main-div">
+  <div class="title-container">
+    <p class="title">Preguntas {{ product.title }}</p>
+  </div>
+  <div class="body" *ngFor="let item of product.questions">
+    <div class="pregunta">
+      <p class="normal-text">{{ item.question }}</p>
+      <p class="bold-text">{{ item.answer ?? "---" }}</p>
+      <form
+        [formGroup]="newAnswer"
+        class="search-bar"
+        *ngIf="userId == product.userId && item.answer == ''"
+      >
+        <input
+          formControlName="answer"
+          type="text"
+          placeholder="Respuesta..."
+          class="search-input"
+        />
+        <button
+          class="search-button"
+          (click)="sendAnswer(item.id!, item.question)"
+        >
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+  <form
+    [formGroup]="newQuestion"
+    class="search-bar"
+    *ngIf="userId != product.userId"
+  >
+    <input
+      formControlName="question"
+      type="text"
+      placeholder="Pregunta..."
+      class="search-input"
+    />
+    <button class="search-button" (click)="sendQuestion()">Enviar</button>
+  </form>
+  <button class="button" (click)="close()">Cerrar</button>
+</div>

@@ -1,376 +1,143 @@
 <div class="body">
-    <img src="assets/images/imagenes-banner/ofertas tecnologi╠üa-100.jpg" class="banner"/>
-    <div class="offers-body">
-        <div class="offers-header">
-            <div class="offers-breadcumb">
-                <ul>
-                    <li><a >Ofertas</a></li>
-                    <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-                    <li><a >Tecnología y electrónica</a></li>
-                    <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-                    <li>{{seccionActual}}</li>
-                </ul>
-            </div>
-            <p>Computadores portátiles en oferta</p>
-        </div>
-        <div class="offers-container-body">
-            <div class="offers-lateral-menu">
-                <div class="lateral-menu-section">
-                    <p class="lateral-menu-title">Categoría</p>
-                    <div class="categoria-title">
-                        <img src="assets/images/iconos-categorias/tecnologi╠üa y electro╠ünica.svg" alt="">
-                        <p>Tecnología y electrónico</p>
-                    </div>
-                    <div class="categoria-section-options">
-                        <p (click)="changeSection('Celulares y tablet')">Celulares y tablet</p>
-                        <p (click)="changeSection('Televisión')">Televisión </p>
-                        <p (click)="changeSection('Audio')">Audio</p>
-                        <p (click)="changeSection('Computador')">Computador</p>
-                        <p (click)="changeSection('Computación')">Computación</p>
-                        <p (click)="changeSection('Video juegos')">Video juegos</p>
-                        <p (click)="changeSection('Smart Home')">Smart Home</p>
-                        <p (click)="changeSection('Fotografía')">Fotografía</p>
-                    </div>
-                </div>
-                <div class="lateral-menu-section">
-                    <p class="lateral-menu-title">Descuento</p>
-                    <div class="categoria-section-options">
-                        <p>Desde 90% -70%</p>
-                        <p>Desde 60% -40%</p>
-                        <p>Desde 30% -10%</p>
-                    </div>
-                </div>
-                <div class="lateral-menu-section">
-                    <p class="lateral-menu-title">Ubicación</p>
-                    <div class="categoria-section-options">
-                        <p>RM (Metropolitano)</p>
-                        <p>Valparaíso</p>
-                        <p>B O‘Higgins</p>
-                    </div>
-                </div>
-                <div class="lateral-menu-section">
-                    <p class="lateral-menu-title">Marcas</p>
-                    <div class="categoria-section-options">
-                        <p>HP</p>
-                        <p>ASUS</p>
-                        <p>ACER</p>
-                        <P>APPLE</P>
-                        <P>HUAWEI</P>
-                        <P>SAMSUNG</P>
-                        <P>PHILIPS</P>
-                        <P>TOSHIBA</P>
-                        <P>DELL</P>
-                    </div>
-                </div>
-            </div>
-            <div class="offers-details">
-                <div class="offers-details-header">
-                    <div class="offers-details-header-title">
-                        <p>13.405 anuncios</p>
-                        <div>
-                            <p>Ordenar por:</p>
-                            <p>Menor precio a mayor precio</p>
-                            <img src="assets\images\iconos-generales\ArrowDown.svg" style="fill: black;" alt="">
-                        </div>
-                    </div>
-                    <div class="line">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1128" height="2" viewBox="0 0 1128 2" fill="none">
-                            <path d="M0.470215 0.944092H1127.47" stroke="#BE272D"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="offers-row">
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="offers-row">
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="offers-row">
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="offers-row">
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-card-title">
-                            <div class="offer-tag">
-                                <p>Oferta</p>
-                            </div>
-                            <div class="offer-percent">
-                                <p>50%</p>
-                            </div>
-                        </div>
-                        <img src="assets/images/imagenes-productos/computador imagen.jpg" alt="">
-                        <p class="offer-before">Antes $100.000 CLP</p>
-                        <p class="offer-price">$50.000 CLP</p>
-                        <p class="offer-description"> Máquina de para hacer papas fritas, de doble cocina</p>
-                        <button class="offer-button" [routerLink]="['/product/', 1]">
-                            <p>Ver más</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="pageController">
-            <button class="pageNavigation-button" (click)="prevPage()">
-                <img src="assets/images/iconos-generales/Left.svg" alt="" >
-            </button>
-            <button *ngFor="let item of paginas" [ngClass]="paginaActual==item ? 'pageNavigation-button-num active' : 'pageNavigation-button-num'" (click)="changePage(item)">
-                <p>{{item}}</p>
-            </button>
-            <button class="pageNavigation-button" (click)="nextPage()">
-                <img src="assets/images/iconos-generales/Right.svg" alt="">
-            </button>
-        </div>
+  <img
+    src="assets/images/imagenes-banner/ofertas tecnologi╠üa-100.jpg"
+    class="banner"
+  />
+  <div class="offers-body">
+    <div class="offers-header">
+      <div class="offers-breadcumb">
+        <ul style="list-style-type: none; cursor: pointer">
+          <li [routerLink]="['/offers']"><a>Ofertas</a></li>
+          <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
+          <li [routerLink]="['/offers2/' + id]">
+            <a>Tecnología y electrónica</a>
+          </li>
+          <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
+          <li>{{ seccionActual }}</li>
+        </ul>
+      </div>
+      <p>{{ categoria.name }} en oferta</p>
     </div>
+    <div class="offers-container-body">
+      <div class="offers-lateral-menu">
+        <div class="lateral-menu-section">
+          <p class="lateral-menu-title">Categoría</p>
+          <div class="categoria-title">
+            <img
+              *ngIf="categoria.logo != null && categoria.logo != ''"
+              src="{{ ruta + categoria.logo }}"
+              alt=""
+            />
+            <p>{{ categoria.name }}</p>
+          </div>
+          <div class="categoria-section-options">
+            <p
+              *ngFor="let item of categoria.subcategories"
+              (click)="changeSection(item.name!, item.id!)"
+            >
+              {{ item.name }}
+            </p>
+          </div>
+        </div>
+        <div class="lateral-menu-section">
+          <p class="lateral-menu-title">Descuento</p>
+          <div class="categoria-section-options">
+            <p (click)="filtrarDiscount(70, 90)">Desde 90% -70%</p>
+            <p (click)="filtrarDiscount(40, 60)">Desde 60% -40%</p>
+            <p (click)="filtrarDiscount(10, 30)">Desde 30% -10%</p>
+          </div>
+        </div>
+        <div class="lateral-menu-section">
+          <p class="lateral-menu-title">Ubicación</p>
+          <div class="categoria-section-options height">
+            <p *ngFor="let state of states" (click)="filtrarState(state.id!)">
+              {{ state.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="offers-details">
+        <div class="offers-details-header">
+          <div class="offers-details-header-title">
+            <p>{{ categoria.products?.length }} anuncios</p>
+            <div>
+              <p>Ordenar por:</p>
+              <select
+                class="select"
+                id="inputState"
+                [(ngModel)]="selectedopt"
+                (change)="shorting()"
+                required
+                style="
+                  background-image: url(assets\images\iconos-generales\ArrowDown.svg);
+                "
+              >
+                <option *ngFor="let item of orderBy" value="{{ item.id }}">
+                  {{ item.text }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="line">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1128"
+              height="2"
+              viewBox="0 0 1128 2"
+              fill="none"
+            >
+              <path d="M0.470215 0.944092H1127.47" stroke="#BE272D" />
+            </svg>
+          </div>
+        </div>
+        <div class="offers-row">
+          <div class="offer-card" *ngFor="let prod of productos">
+            <div class="offer-card-title">
+              <div class="offer-tag">
+                <p>Oferta</p>
+              </div>
+              <div class="offer-percent">
+                <p>{{ prod.discount }}%</p>
+              </div>
+            </div>
+            <img src="{{ ruta + prod.ProductImages![0].filePath }}" alt="" />
+            <p class="offer-before">
+              Antes
+              {{ prod.referencialPrice | currency : "CLP" : "symbol-narrow" }}
+              CLP
+            </p>
+            <p class="offer-price">
+              {{ prod.referencialPrice | currency : "CLP" : "symbol-narrow" }}
+              CLP
+            </p>
+            <p class="offer-description">
+              {{ prod.title.toUpperCase() }}
+            </p>
+            <button class="offer-button" [routerLink]="['/product/', prod.id]">
+              <p>Ver más</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pageController">
+      <button class="pageNavigation-button" (click)="prevPage()">
+        <img src="assets/images/iconos-generales/Left.svg" alt="" />
+      </button>
+      <button
+        *ngFor="let item of paginas"
+        [ngClass]="
+          paginaActual == item
+            ? 'pageNavigation-button-num active'
+            : 'pageNavigation-button-num'
+        "
+        (click)="changePage(item)"
+      >
+        <p>{{ item }}</p>
+      </button>
+      <button class="pageNavigation-button" (click)="nextPage()">
+        <img src="assets/images/iconos-generales/Right.svg" alt="" />
+      </button>
+    </div>
+  </div>
 </div>

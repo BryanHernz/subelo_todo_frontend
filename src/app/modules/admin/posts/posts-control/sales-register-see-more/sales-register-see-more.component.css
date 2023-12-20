@@ -74,6 +74,7 @@
     height: 101.006px;
     width: 72px;
     flex: 1 0 0;
+    object-fit: contain;
 }
 
 .info-container {

@@ -1,5 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { ProductImageModel } from 'src/app/models/productImage';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-swiper-gallery',
@@ -10,9 +11,7 @@ export class SwiperGalleryComponent implements OnInit {
 
   imagenes:ProductImageModel[]=[];
   imagenActual: String='';
-  
-  ruta:string='http://localhost:8000/'
-
+  ruta:string=environment.imagesUrl
   @Input({ required: true })
   data: ProductImageModel[] = [];
 

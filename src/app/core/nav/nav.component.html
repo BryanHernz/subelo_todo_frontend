@@ -1,114 +1,133 @@
-<header class="header" data-header>
-  <div class="container">
-    <div class="container-leading">
-      <a routerLink="/home" class="logo">
-        <img src="assets/img/logo.svg" height="51.63" alt="Jassa home" />
-      </a>
+<!-- BEGIN: Navbar -->
 
-      <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <a
-              [routerLink]="['/home']"
-              class="header-label navbar-link"
-              routerLinkActive="active"
-              >Home</a
-            >
-          </li>
-
-          <li class="navbar-item">
-            <a
-              [routerLink]="['/offers']"
-              class="header-label navbar-link"
-              routerLinkActive="active"
-              >Ofertas</a
-            >
-          </li>
-
-          <li class="navbar-item">
-            <a
-              [routerLink]="['/how-to-sale']"
-              class="header-label navbar-link"
-              routerLinkActive="active"
-              >¿Cómo vender?</a
-            >
-          </li>
-
-          <li class="navbar-item">
-            <a
-              [routerLink]="['/frequent-questions']"
-              class="header-label navbar-link"
-              routerLinkActive="active"
-              >Preguntas frecuentes</a
-            >
-          </li>
-
-          <li class="navbar-item">
-            <a
-              [routerLink]="['/inform']"
-              class="header-label navbar-link"
-              routerLinkActive="active"
-              >Subelo todo informa</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <!--<button class="nav-toggle-btn" aria-label="menu" data-nav-toggler (click)="addToggle()">
-            <img src="assets\images\iconos-generales\categorias.svg">
-          </button>-->
-
-    <div class="container-icons">
+<nav class="navbar">
+  <div class="navbar-logo">
+    <button mat-button [matMenuTriggerFor]="menulat" class="resmenu">
+      <img
+        src="assets/images/iconos-generales/categorias.svg"
+        style="height: 25px"
+        alt=""
+      />
+    </button>
+    <mat-menu #menulat="matMenu">
+      <br />
       <button
-        mat-icon-button
-        class="btn btn-text"
+        [routerLink]="['/home']"
+        routerLinkActive="active"
+        class="navbar-link"
+      >
+        Home
+      </button>
+
+      <br />
+      <br />
+      <button
+        [routerLink]="['/offers']"
+        routerLinkActive="active"
+        class="navbar-link"
+      >
+        Ofertas
+      </button>
+      <br />
+      <br />
+      <button
+        [routerLink]="['/how-to-sale']"
+        routerLinkActive="active"
+        class="navbar-link"
+      >
+        ¿Cómo vender?
+      </button>
+      <br />
+      <br />
+      <button
+        [routerLink]="['/frequent-questions']"
+        routerLinkActive="active"
+        class="navbar-link"
+      >
+        Preguntas frecuentes
+      </button>
+      <br />
+      <br />
+      <button
+        [routerLink]="['/inform']"
+        routerLinkActive="active"
+        class="navbar-link"
+      >
+        Súbelo todo informa
+      </button>
+      <br />
+      <br />
+    </mat-menu>
+    <img src="assets/img/logo.svg" alt="" [routerLink]="['/home']" />
+  </div>
+
+  <div class="navbar-items">
+    <div class="navbar-links">
+      <a [routerLink]="['/home']" routerLinkActive="active" class="navbar-link"
+        >Home</a
+      >
+      <a
+        [routerLink]="['/offers']"
+        routerLinkActive="active"
+        class="navbar-link"
+        >Ofertas</a
+      >
+      <a
+        [routerLink]="['/how-to-sale']"
+        routerLinkActive="active"
+        class="navbar-link"
+        >¿Cómo vender?</a
+      >
+      <a
+        [routerLink]="['/frequent-questions']"
+        routerLinkActive="active"
+        class="navbar-link"
+        >Preguntas frecuentes</a
+      >
+      <a
+        [routerLink]="['/inform']"
+        routerLinkActive="active"
+        class="navbar-link"
+        >Súbelo todo informa</a
+      >
+    </div>
+
+    <div class="navbar-icons">
+      <!-- Botones de icono con menú desplegable aquí -->
+      <button
+        class="navbar-icon"
         aria-label="menu"
         data-nav-toggler
         (click)="toggleMenu()"
       >
-        <img
-          class="img_menu"
-          src="assets\images\iconos-generales\categorias.svg"
-        />
+        <img src="assets/images/iconos-generales/categorias.svg" alt="" /><i
+          class="fas fa-home"
+        ></i>
       </button>
-
-      <button
-        mat-icon-button
-        class="btn btn-text"
-        aria-label="menu"
-        data-nav-toggler
-      >
-        <img
-          class="img_menu"
-          src="assets\images\iconos-generales\campana icono.svg"
-        />
+      <button class="navbar-icon">
+        <img src="assets/images/iconos-generales/campana icono.svg" alt="" /><i
+          class="fas fa-search"
+        ></i>
       </button>
-
-      <button
-        [routerLink]="['/shopping-cart']"
-        mat-icon-button
-        class="btn btn-text"
-      >
+      <button class="navbar-icon">
         <img
-          class="img_menu"
-          src="assets\images\iconos-generales\bolsa icono.svg"
-        />
+          src="assets/images/iconos-generales/bolsa icono.svg"
+          alt=""
+          [routerLink]="['/shopping-cart']"
+        /><i class="fas fa-bell"></i>
       </button>
-
       <button
+        class="navbar-icon"
         *ngIf="sellerLogged == false && adminLogged == false"
         mat-icon-button
-        class="btn btn-text"
         aria-label="menu"
         data-nav-toggler
         (click)="openDialog()"
       >
-        <img
-          class="img_menu"
-          src="assets\images\iconos-generales\persona icono.svg"
-        />
+        <img src="assets/images/iconos-generales/persona icono.svg" alt="" /><i
+          class="fas fa-user"
+        ></i>
       </button>
-
       <button
         class="profile-button"
         *ngIf="sellerLogged"
@@ -134,7 +153,7 @@
             style="
               position: absolute;
               right: 7px;
-              bottom: 13px;
+              bottom: 7px;
               width: 18.65px;
               height: 19.741px;
             "
@@ -176,7 +195,7 @@
             style="
               position: absolute;
               right: 7px;
-              bottom: 13px;
+              bottom: 10px;
               width: 18.65px;
               height: 19.741px;
             "
@@ -193,115 +212,99 @@
         <app-admin-vertical-menu></app-admin-vertical-menu>
       </mat-menu>
     </div>
+    <div class="navbar-profile">
+      <!-- Botón de perfil aquí -->
+    </div>
+  </div>
+</nav>
 
-    <!-- ... (código anterior) ... -->
+<!-- END: Navbar -->
 
-    <div
-      class="category-menu"
-      [ngClass]="menuOpen ? 'open' : ''"
-      [ngStyle]="{ height: regiones ? '1157px' : '894px', width: '973px' }"
+<!-- BEGIN: Search Bar -->
+<nav class="searchbar">
+  <div></div>
+  <div class="search-bar">
+    <img src="assets/images/iconos-generales/lupa de busqueda.svg" alt="" />
+    <input type="text" placeholder="Buscar..." class="search-input" />
+    <button class="search-button">Buscar</button>
+  </div>
+</nav>
+
+<!-- END: Search Bar -->
+<div matDialogActions class="category-menu" [ngClass]="menuOpen ? 'open' : ''">
+  <div>
+    <button
+      [ngClass]="regiones ? 'switch-button' : 'switch-button-active'"
+      (click)="regiones = false"
     >
-      <div>
-        <button
-          [ngClass]="regiones ? 'switch-button' : 'switch-button-active'"
-          (click)="regiones = false"
-        >
-          <p
-            [ngClass]="
-              regiones ? 'switch-button-text' : 'switch-button-text-active'
-            "
-          >
-            Categorias
-          </p>
-        </button>
-        <button
-          [ngClass]="regiones ? 'switch-button-active' : 'switch-button'"
-          (click)="regiones = true"
-        >
-          <p
-            [ngClass]="
-              regiones ? 'switch-button-text-active' : 'switch-button-text'
-            "
-          >
-            Regiones
-          </p>
-        </button>
+      <p
+        [ngClass]="
+          regiones ? 'switch-button-text' : 'switch-button-text-active'
+        "
+      >
+        Categorias
+      </p>
+    </button>
+    <button
+      [ngClass]="regiones ? 'switch-button-active' : 'switch-button'"
+      (click)="regiones = true"
+    >
+      <p
+        [ngClass]="
+          regiones ? 'switch-button-text-active' : 'switch-button-text'
+        "
+      >
+        Regiones
+      </p>
+    </button>
+  </div>
+  <div class="category-content" *ngIf="regiones == false" fxLayout="row wrap">
+    <div *ngFor="let categoria of categories" class="categoria">
+      <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+        <img
+          class="categoria-logo"
+          [src]="categoria.logo"
+          alt="Logo de categoría"
+        />
+        <p (click)="cerrar()" class="categoria-title">{{ categoria.name }}</p>
       </div>
       <div
-        class="category-content"
-        *ngIf="regiones == false"
+        class="subcategorias"
         fxLayout="column wrap"
-        style="height: 98%; margin-top: 0; gap: 0"
+        fxLayoutAlign="space-between"
+        fxFlex="auto"
+        fxLayoutGap="1rem"
       >
         <div
-          *ngFor="let categoria of categories"
-          class="categoria"
-          style="width: 193px"
+          *ngFor="let subcategoria of categoria.subcategories"
+          (click)="cerrar()"
+          class="subcategoria"
         >
-          <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
-            <img
-              class="categoria-logo"
-              [src]="categoria.logo"
-              alt="Logo de categoría"
-            />
-            <p class="categoria-title">{{ categoria.name }}</p>
-          </div>
-          <div
-            class="subcategorias"
-            fxLayout="column wrap"
-            fxLayoutAlign="space-between"
-            fxFlex="auto"
-            fxLayoutGap="1rem"
-          >
-            <div
-              *ngFor="let subcategoria of categoria.subCategories"
-              class="subcategoria"
-            >
-              {{ subcategoria.name }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="category-content"
-        *ngIf="regiones == true"
-        fxLayout="column wrap"
-        style="height: 98%; margin-top: 0; gap: 0"
-      >
-        <div
-          *ngFor="let region of regions"
-          class="categoria"
-          style="width: 16.25rem"
-        >
-          <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
-            <p class="categoria-title">{{ region.name }}</p>
-          </div>
-          <div
-            class="subcategorias"
-            fxLayout="column wrap"
-            fxLayoutAlign="space-between"
-            fxFlex="auto"
-            fxLayoutGap="1rem"
-          >
-            <div *ngFor="let comuna of region.communes" class="subcategoria">
-              {{ comuna.name }}
-            </div>
-          </div>
+          {{ subcategoria.name }}
         </div>
       </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="search-item">
-      <div class="search-container">
-        <img src="assets\images\iconos-generales\lupa de busqueda.svg" />
-        <input type="text" placeholder="" />
-
-        <button class="search-button">
-          <p class="button-text">Buscar</p>
-        </button>
+  <div class="category-content" *ngIf="regiones == true" fxLayout="row wrap">
+    <div *ngFor="let region of states" class="categoria">
+      <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+        <p (click)="cerrar()" class="categoria-title">{{ region.name }}</p>
+      </div>
+      <div
+        class="subcategorias"
+        fxLayout="column wrap"
+        fxLayoutAlign="space-between"
+        fxFlex="auto"
+        fxLayoutGap="1rem"
+      >
+        <div
+          *ngFor="let comuna of region.cities"
+          class="subcategoria"
+          (click)="cerrar()"
+        >
+          {{ comuna.name }}
+        </div>
       </div>
     </div>
   </div>
-</header>
+</div>

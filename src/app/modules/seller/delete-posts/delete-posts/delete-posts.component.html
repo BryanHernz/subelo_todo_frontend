@@ -37,7 +37,7 @@
       <div class="body-card">
         <div class="row-post" *ngFor="let item of posts">
           <img src="{{ ruta + item.ProductImages![0].filePath }}" alt="" />
-          <p class="row-post-name">{{ item.title }}</p>
+          <p class="row-post-name">{{ item.title.toUpperCase() }}</p>
           <div class="date-location-container">
             <p>Fecha: {{ item.createdAt | date : "dd.MM.yyyy" }}</p>
             <p>Comuna: {{ item.city?.name }}</p>

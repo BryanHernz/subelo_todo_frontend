@@ -4,6 +4,7 @@ import { DeletePostComponent } from '../delete-post/delete-post.component';
 import { DeletePostsSeeMoreComponent } from '../delete-posts-see-more/delete-posts-see-more.component';
 import { ProductsService } from 'src/app/services/productsservice/products.service';
 import { ProductModel } from 'src/app/models/productModel';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-delete-posts',
@@ -14,7 +15,7 @@ export class DeletePostsComponent {
   
   posts:ProductModel[]=[];
   
-  ruta:string='http://localhost:8000/'
+  ruta:string=environment.imagesUrl
 
   constructor(private dialog: MatDialog,private productserv:ProductsService) {}
 

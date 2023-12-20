@@ -1,59 +1,94 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-admin-vertical-menu></app-admin-vertical-menu>
+  <div class="lateral">
+    <app-admin-vertical-menu></app-admin-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="breadcrumb">
+      <ul>
+        <li><a [routerLink]="['/admin-posts']">Publicaciones</a></li>
+        <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
+        <li>
+          <a [routerLink]="['/admin-posts-control']"
+            >Control de productos publicados</a
+          >
+        </li>
+        <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
+        <li [routerLink]="['/admin-sales-register']">Registro de venta</li>
+      </ul>
     </div>
-    <div class="main-container">
-      <div class="breadcrumb">
-        <ul>
-          <li><a [routerLink]="['/admin-posts']">Publicaciones</a></li>
-          <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-          <li><a [routerLink]="['/admin-posts-control']">Control de productos publicados</a></li>
-          <img src="assets\images\iconos-generales\ArrowRight.svg" alt="">
-            <li [routerLink]="['/admin-sales-register']">Registro de venta</li>
-        </ul>
-      </div>
-        <div class="title-container">
-            <p class="main-title">Todos los registros de venta realizadas</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1088" height="2" viewBox="0 0 1088 2" fill="none">
-                <path d="M0.112793 0.552399H1087.85" stroke="#BE272D"/>
-            </svg>
-        </div>
-        <div class="content-container">
-            <table mat-table [dataSource]="solicitudes" #tabla1>
+    <div class="title-container">
+      <p class="main-title">Todos los registros de venta realizadas</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1088"
+        height="2"
+        viewBox="0 0 1088 2"
+        fill="none"
+      >
+        <path d="M0.112793 0.552399H1087.85" stroke="#BE272D" />
+      </svg>
+    </div>
+    <div class="content-container">
+      <table mat-table [dataSource]="orders" #tabla1>
+        <ng-container matColumnDef="fecha">
+          <th class="header" mat-header-cell *matHeaderCellDef>
+            Fecha de ingreso
+          </th>
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.createdAt | date : "dd/MM/yyyy" : "ES" }}
+          </td>
+        </ng-container>
 
-                <ng-container matColumnDef="fecha">
-                  <th class="header" mat-header-cell *matHeaderCellDef> Fecha de ingreso </th>
-                  <td class="row" mat-cell *matCellDef="let solicitud"> {{solicitud.fecha}} </td>
-                </ng-container>
-              
-                <ng-container matColumnDef="publicador">
-                  <th class="header" mat-header-cell *matHeaderCellDef> Publicado por </th>
-                  <td class="row" mat-cell *matCellDef="let solicitud"> {{solicitud.publicador}} </td>
-                </ng-container>
-              
-                <ng-container matColumnDef="telefono">
-                    <th class="header" mat-header-cell *matHeaderCellDef> Teléfono </th>
-                    <td class="row" mat-cell *matCellDef="let solicitud"> {{solicitud.telefono}} </td>
-                </ng-container>
-                
-                <ng-container matColumnDef="mail">
-                <th class="header" mat-header-cell *matHeaderCellDef> Mail </th>
-                <td class="row" mat-cell *matCellDef="let solicitud"> {{solicitud.mail}} </td>
-                </ng-container>
-            
-                <ng-container matColumnDef="publicacion">
-                <th class="header" mat-header-cell *matHeaderCellDef> Publicación </th>
-                <td class="row" mat-cell *matCellDef="let solicitud"> {{solicitud.publicacion}} </td>
-                </ng-container>
-              
-                <ng-container matColumnDef="informacion">
-                  <th class="header" mat-header-cell *matHeaderCellDef> Información </th>
-                  <td class="row" mat-cell *matCellDef="let solicitud"><button class="button" (click)="openDialog()">{{solicitud.informacion}}</button></td>
-                </ng-container>
-                
-                <tr class="header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr class="row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-              </table>
-        </div>
+        <ng-container matColumnDef="publicador">
+          <th class="header" mat-header-cell *matHeaderCellDef>
+            Publicado por
+          </th>
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.product.user.firstName }} {{ post.product.user.lastName }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="telefono">
+          <th class="header" mat-header-cell *matHeaderCellDef>Teléfono</th>
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.product.user.phone }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mail">
+          <th class="header" mat-header-cell *matHeaderCellDef>Mail</th>
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.product.user.email }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="publicacion">
+          <th class="header" mat-header-cell *matHeaderCellDef>Publicación</th>
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.product.title.toUpperCase() }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="informacion">
+          <th class="header" mat-header-cell *matHeaderCellDef>Información</th>
+          <td class="row" mat-cell *matCellDef="let post">
+            <button class="button" (click)="openDialog(post)">
+              Ver información
+            </button>
+          </td>
+        </ng-container>
+
+        <tr
+          class="header"
+          mat-header-row
+          *matHeaderRowDef="displayedColumns"
+        ></tr>
+        <tr
+          class="row"
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+        ></tr>
+      </table>
     </div>
-</div>  
+  </div>
+</div>

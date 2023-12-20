@@ -1,6 +1,7 @@
 import { CategoryModel } from "./categoryModel";
 import { CityModel } from "./cityModel";
 import { ProductImageModel } from "./productImage";
+import { QuestionModel } from "./questionModel";
 import { StateModel } from "./stateModel";
 import { SubcategoryModel } from "./subcategoryModel";
 import { UserModel } from "./userModel";
@@ -23,9 +24,10 @@ export interface ProductModel{
     state?:StateModel;
     discount:number;
     user?:UserModel;
-    aproved:boolean;
+    approved:boolean;
     stock:number;
     ProductImages?:ProductImageModel[];
+    questions?:QuestionModel[];
     description:string;
     condition:string;
     price:number;

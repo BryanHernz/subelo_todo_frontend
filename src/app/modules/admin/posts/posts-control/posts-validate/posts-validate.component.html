@@ -3,7 +3,7 @@
     <app-admin-vertical-menu></app-admin-vertical-menu>
   </div>
   <div class="main-container">
-    <div class="breadcrumb">
+    <!--<div class="breadcrumb">
       <ul>
         <li><a [routerLink]="['/admin-posts']">Publicaciones</a></li>
         <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
@@ -15,7 +15,7 @@
         <img src="assets\images\iconos-generales\ArrowRight.svg" alt="" />
         <li [routerLink]="['/admin-posts-validate']">Validar publicaciones</li>
       </ul>
-    </div>
+    </div>-->
     <div class="title-container">
       <p class="main-title">Validar publicaciones</p>
       <svg
@@ -29,50 +29,48 @@
       </svg>
     </div>
     <div class="content-container">
-      <table mat-table [dataSource]="solicitudes" #tabla1>
-        <ng-container matColumnDef="fecha">
-          <th class="header" mat-header-cell *matHeaderCellDef>
+      <table mat-table [dataSource]="posts" #tabla1>
+        <ng-container matColumnDef="fecha" style="flex: 2">
+          <th class="header" style="flex: 2" mat-header-cell *matHeaderCellDef>
             Fecha de ingreso
           </th>
-          <td class="row" mat-cell *matCellDef="let solicitud">
-            {{ solicitud.fecha }}
+          <td class="row" style="flex: 2" mat-cell *matCellDef="let post">
+            {{ post.createdAt | date : "dd/MM/yyyy" : "ES" }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="publicador">
           <th class="header" mat-header-cell *matHeaderCellDef>Publicador</th>
-          <td class="row" mat-cell *matCellDef="let solicitud">
-            {{ solicitud.publicador }}
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.user.firstName }} {{ post.user.lastName }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="telefono">
           <th class="header" mat-header-cell *matHeaderCellDef>Teléfono</th>
-          <td class="row" mat-cell *matCellDef="let solicitud">
-            {{ solicitud.telefono }}
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.user.phone }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="mail">
           <th class="header" mat-header-cell *matHeaderCellDef>Mail</th>
-          <td class="row" mat-cell *matCellDef="let solicitud">
-            {{ solicitud.mail }}
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.user.email }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="publicacion">
           <th class="header" mat-header-cell *matHeaderCellDef>Publicación</th>
-          <td class="row" mat-cell *matCellDef="let solicitud">
-            {{ solicitud.publicacion }}
+          <td class="row" mat-cell *matCellDef="let post">
+            {{ post.title.toUpperCase() }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="validar">
           <th class="header" mat-header-cell *matHeaderCellDef>Validar</th>
-          <td class="row" mat-cell *matCellDef="let solicitud">
-            <button class="button" (click)="openDialog()">
-              {{ solicitud.validar }}
-            </button>
+          <td class="row" mat-cell *matCellDef="let post">
+            <button class="button" (click)="openDialog(post)">Validar</button>
           </td>
         </ng-container>
 

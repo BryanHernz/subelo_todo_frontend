@@ -1,154 +1,262 @@
 <main>
-    <article>
-      <!-------------------------------------
+  <article>
+    <!-------------------------------------
           #BANNER
       ------------------------------------->
 
-      <section id="banner" fxLayoutAlign="center center" >
-        <mat-card class="banner-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-          <div fxLayout="column" fxLayoutAlign="start left">
-            <h1 class="banner-title">¡Bienvenidos!</h1>
-            <p class="banner-subtitle">Encuentra todos los productos de segunda mano en un solo sitio</p>
-            <button mat-raised-button  class="banner-button">Ver más</button>
-          </div>
-          <div fxLayoutAlign="center">
-            <img src="assets/images/bannerproducts.png" alt="Imagen del banner" class="banner-image" />
-          </div>
-        </mat-card>
-      </section>
-     <!-------------------------------------
+    <section id="banner" fxLayoutAlign="center center">
+      <mat-card
+        class="banner-container"
+        fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="20px"
+      >
+        <div fxLayout="column" fxLayoutAlign="start left">
+          <h1 class="banner-title">{{ banners.at(0)?.title }}</h1>
+          <p class="banner-subtitle">
+            {{ banners.at(0)?.text }}
+          </p>
+          <!--<button mat-raised-button  class="banner-button">Ver más</button>-->
+        </div>
+        <div fxLayoutAlign="center">
+          <img
+            src="{{ ruta + banners.at(0)!.banner }}"
+            alt="Imagen del banner"
+            class="banner-image"
+          />
+        </div>
+      </mat-card>
+    </section>
+    <!-------------------------------------
           #PRODUCTOS MAS VENDIDOS
       ------------------------------------->
 
-    <section  fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center center" >
+    <section
+      fxLayout="column"
+      fxLayout.xs="column"
+      fxLayoutAlign="center center"
+    >
       <h2 class="seccion-title" fxLayoutAlign="center center">
-          Productos mas vendidos
+        Productos mas vendidos
       </h2>
-      <swiper-container class="mySwiper" navigation="true" pagination="true" keyboard="true" 
-        css-mode="true"  slides-per-view="3" rewind="true" >
-          <swiper-slide *ngFor="let product of productsCard" >
-            <mat-card class="product-card" fxLayout="column" fxLayout.xs="column" 
-              fxLayoutAlign="center center" style="margin-bottom: 20px;">
-              <mat-card-header >
-                      <img class="product-img" [src]="product.photo">
-                    </mat-card-header>
-                    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-                      <div class="product-card-text" fxLayout="row" fxLayoutAlign="start center">
-                        <p style="margin-right: 40px;">{{product.date}}</p>
-                        <p>{{product.country}}</p>
-                      </div>
-                      <div fxLayout="row" fxLayoutAlign="center center" >
-                        <h2 class="product-money" style="color :#BE272D;"><b>{{product.price | currency : 'CLP' : 'symbol-narrow'}} CLP</b></h2>
-                      </div>
-                      <div fxLayout="row" fxLayoutAlign="center center">
-                        <p class="product-name" >{{product.name}}</p>
-                      </div>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <a [routerLink]="['/product/', product.id]">
-                        <button mat-raised-button class="button-product-card">Ver más</button>
-                      </a>                        
-                    </mat-card-actions>
-            </mat-card>
-          </swiper-slide>
+
+      <swiper-container
+        class="mySwiper"
+        navigation="true"
+        navigationColor="#be272d"
+        pagination="true"
+        keyboard="true"
+        css-mode="true"
+        slides-per-view="3"
+        rewind="true"
+      >
+        <swiper-slide *ngFor="let product of products">
+          <mat-card
+            class="product-card"
+            fxLayout="column"
+            fxLayout.xs="column"
+            fxLayoutAlign="center center"
+            style="margin-bottom: 20px"
+          >
+            <mat-card-header>
+              <img
+                class="product-img"
+                [src]="ruta + product.ProductImages![0].filePath"
+              />
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+              <div
+                class="product-card-text"
+                fxLayout="row"
+                fxLayoutAlign="start center"
+              >
+                <p style="margin-right: 40px">
+                  {{ product.createdAt | date : "dd/MM/yyyy" }}
+                </p>
+                <p>{{ product.state?.name }}</p>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <h2 class="product-money" style="color: #be272d">
+                  <b
+                    >{{
+                      product.price | currency : "CLP" : "symbol-narrow"
+                    }}
+                    CLP</b
+                  >
+                </h2>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <p class="product-name">{{ product.title }}</p>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <a [routerLink]="['/product/', product.id]">
+                <button mat-raised-button class="button-product-card">
+                  Ver más
+                </button>
+              </a>
+            </mat-card-actions>
+          </mat-card>
+        </swiper-slide>
       </swiper-container>
     </section>
 
-     <!-------------------------------------
+    <!-------------------------------------
           #CATEGORIAS DESTACADAS
       ------------------------------------->
-    
+
     <section fxLayout="row wrap" fxLayoutAlign="center center">
-        <mat-card class="popular-categories"  fxLayout="row"  fxLayoutAlign="center center">
-          <div class="image-container" fxLayout="column">
-            <img src="assets/images/example-special-categories-2.png" alt="Imagen" class="image-popular" />
+      <mat-card
+        class="popular-categories"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+      >
+        <div class="image-container" fxLayout="column">
+          <img
+            src="{{ ruta + banners.at(1)?.banner }}"
+            alt="Imagen"
+            class="image-popular"
+          />
+        </div>
+        <div fxLayout="column">
+          <div class="title-text-container" fxLayout="column" fxLayoutGap="5px">
+            <h2 class="title-popular">{{ banners.at(1)?.title }}</h2>
           </div>
-          <div fxLayout="column">
-            <div class="title-text-container" fxLayout="column" fxLayoutGap="5px">
-              <h2 class="title-popular" >Día del niño</h2>
-            </div>
-            
-            <div class="subtitle-text-container" fxLayout="column" fxLayoutGap="5px">
-              <p class="sub-title-popular" >Lo mejor en jugueteria y tecnología</p>
-            </div>
-            <mat-card-actions fxLayout="column" fxLayoutGap="5px">
-              <button mat-raised-button class="button-popular-categories">Ver más</button>
-            </mat-card-actions>
+
+          <div
+            class="subtitle-text-container"
+            fxLayout="column"
+            fxLayoutGap="5px"
+          >
+            <p class="sub-title-popular">{{ banners.at(1)?.text }}</p>
           </div>
-        </mat-card>
-        <mat-card class="popular-categories" fxLayout="row"  fxLayoutAlign="center center">
-          <div class="image-container" fxLayout="column">
-            <img src="assets/images/example-special-categories-1.png" alt="Imagen" class="image-popular" />
+          <mat-card-actions fxLayout="column" fxLayoutGap="5px">
+            <button mat-raised-button class="button-popular-categories">
+              Ver más
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-card>
+      <mat-card
+        class="popular-categories"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+      >
+        <div class="image-container" fxLayout="column">
+          <img
+            src="{{ ruta + banners.at(2)?.banner }}"
+            alt="Imagen"
+            class="image-popular"
+          />
+        </div>
+        <div fxLayout="column">
+          <div class="title-text-container" fxLayout="column" fxLayoutGap="5px">
+            <h2 class="title-popular">{{ banners.at(2)?.title }}</h2>
           </div>
-          <div fxLayout="column">
-            <div class="title-text-container" fxLayout="column" fxLayoutGap="5px">
-              <h2 class="title-popular" >Nuevos productos</h2>
-            </div>
-            
-            <div class="subtitle-text-container" fxLayout="column" fxLayoutGap="5px">
-              <p class="sub-title-popular" >Artículos del hogar y automotriz </p>
-            </div>
-            <mat-card-actions fxLayout="column" fxLayoutGap="5px">
-              <button mat-raised-button class="button-popular-categories">Ver más</button>
-            </mat-card-actions>
+
+          <div
+            class="subtitle-text-container"
+            fxLayout="column"
+            fxLayoutGap="5px"
+          >
+            <p class="sub-title-popular">{{ banners.at(2)?.text }}</p>
           </div>
-        </mat-card>
+          <mat-card-actions fxLayout="column" fxLayoutGap="5px">
+            <button mat-raised-button class="button-popular-categories">
+              Ver más
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-card>
     </section>
 
-     <!-------------------------------------
+    <!-------------------------------------
           #PRODUCTOS EN DESCUENTO
       ------------------------------------->
 
     <section fxLayout="column" fxLayoutAlign="center center">
-        <mat-card  class="card-products" >
-          <mat-card-header class="card-products-container"  >
-            <mat-card-title class="seccion-title">
-              Productos en descuento
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content  fxLayout="row wrap" fxLayoutAlign="center center">
-              <mat-card *ngFor="let product of productsDiscountCard"
-                         class="product-discount-card" fxLayout="column" 
-                         fxLayout.xs="column" fxLayoutAlign="center center" 
-                         style="margin-bottom: 20px;
-                         ">
-                <mat-card-header fxLayout="column">
-                  <div style="width: 266px; height: 31px;"> 
-                      <p style="font-family: Titillium Web;
-                        font-size: 20px;
-                        font-weight: 700;
-                        line-height: 31px;
-                        letter-spacing: 0.01em;
-                        text-align: left;
-                        color:#BE272D;
-                      ">
-                        Descuento</p>
-                  </div>
-                  <img class="product-discount-img" [src]="product.photo">
-                </mat-card-header>
-                <mat-card-content fxLayout="column" fxLayoutAlign="center center" >
-                  <div class="product-card-text" fxLayout="row" fxLayoutAlign="start center" >
-                    <p style="margin-right: 40px;">{{product.date}}</p>
-                    <p>{{product.country}}</p>
-                  </div>
-                  <div fxLayout="row" fxLayoutAlign="center center" >
-                    <h2 class="product-money" style="color :#BE272D;"><b>{{product.price | currency : 'CLP' : 'symbol-narrow'}}</b></h2>
-                  </div>
-                  <div fxLayout="row" fxLayoutAlign="center center">
-                    <p class="product-name" >{{product.name}}</p>
-                  </div>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-raised-button class="button-product-card" [routerLink]="['/product/', 1]">Ver más</button>
-                </mat-card-actions>
-              </mat-card>
-          </mat-card-content>
-          <mat-card-footer fxLayoutAlign="center center">
+      <mat-card class="card-products">
+        <mat-card-header class="card-products-container">
+          <mat-card-title class="seccion-title">
+            Productos en descuento
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout="row wrap" fxLayoutAlign="center center">
+          <mat-card
+            *ngFor="let product of products"
+            class="product-discount-card"
+            fxLayout="column"
+            fxLayout.xs="column"
+            fxLayoutAlign="center center"
+            style="margin-bottom: 20px"
+          >
+            <mat-card-header fxLayout="column">
+              <div style="width: 266px; height: 31px">
+                <p
+                  style="
+                    font-family: TitilliumWeb;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 31px;
+                    letter-spacing: 0.01em;
+                    text-align: left;
+                    color: #be272d;
+                  "
+                >
+                  Descuento
+                </p>
+              </div>
+              <img
+                class="product-discount-img"
+                [src]="ruta + product.ProductImages![0].filePath"
+              />
+            </mat-card-header>
+            <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+              <div
+                class="product-card-text"
+                fxLayout="row"
+                fxLayoutAlign="start center"
+              >
+                <p style="margin-right: 40px">
+                  {{ product.createdAt | date : "dd/MM/yyyy" }}
+                </p>
+                <p>{{ product.state?.name }}</p>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <h2 class="product-money" style="color: #be272d">
+                  <b>{{
+                    product.price | currency : "CLP" : "symbol-narrow"
+                  }}</b>
+                </h2>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <p class="product-name">{{ product.title }}</p>
+              </div>
+            </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button class="product-discount-button" style="margin-bottom: 30px;">Ver todo</button>
+              <button
+                mat-raised-button
+                class="button-product-card"
+                [routerLink]="['/product/', product.id]"
+              >
+                Ver más
+              </button>
             </mat-card-actions>
-          </mat-card-footer>
-        </mat-card>
+          </mat-card>
+        </mat-card-content>
+        <mat-card-footer fxLayoutAlign="center center">
+          <mat-card-actions>
+            <button
+              mat-raised-button
+              class="product-discount-button"
+              style="margin-bottom: 30px"
+            >
+              Ver todo
+            </button>
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
     </section>
-</article>
+  </article>
 </main>

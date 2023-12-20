@@ -1,98 +1,112 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-seller-vertical-menu></app-seller-vertical-menu>
+  <div class="lateral">
+    <app-seller-vertical-menu></app-seller-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="title-container">
+      <p class="main-title">Ventas realizadas</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1056"
+        height="2"
+        viewBox="0 0 1056 2"
+        fill="none"
+      >
+        <path d="M0.11377 0.858582H1087.85" stroke="#BE272D" />
+      </svg>
     </div>
-    <div class="main-container">
-        <div class="title-container">
-            <p class="main-title">Ventas realizadas</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1056" height="2" viewBox="0 0 1056 2" fill="none">
-                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
-                </svg>
+    <div class="body">
+      <div class="date-card">
+        <div class="date-card-title">
+          <p class="date-card-title-text">Ventas</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1016"
+            height="2"
+            viewBox="0 0 1016 2"
+            fill="none"
+          >
+            <path d="M0 1H1056" stroke="#BE272D" />
+          </svg>
         </div>
-        <div class="body">
-            <div class="date-card">
-                <div class="date-card-title">
-                    <p class="date-card-title-text">01 de agosto</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1016" height="2" viewBox="0 0 1016 2" fill="none">
-                        <path d="M0 1H1056" stroke="#BE272D"/>
-                    </svg>
-                </div>
-                <div class="date-card-row">
-                    <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="">
-                    <div class="date-card-row-container">
-                        <p class="green-text">Venta entregada</p>
-                        <p class="bold-text">08 de Agosto </p>
-                        <p class="normal-text">Estufa a leña Neoflam grande</p>
-                        <p class="normal-text">n°12345678900909</p>
-                    </div>
-                    <div class="date-card-row-container">
-                        <p class="normal-text">Cantidad de unidades </p>
-                        <p class="bold-text">01</p>
-                    </div>
-                    <div class="date-card-row-container">
-                        <p class="normal-text">Venta realizada a:</p>
-                        <p class="bold-text">Daniel Armas Castillo F.</p>
-                        <p class="normal-text">+56912345678</p>
-                        <p class="normal-text">DArmasCasf@gmail.com</p>
-                    </div>
-                    <div>
-                        <button class="button" (click)="openDialog()">Ver venta</button>
-                    </div>
-                </div>
-                <div class="date-card-row">
-                    <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="">
-                    <div class="date-card-row-container">
-                        <p class="green-text">Venta entregada</p>
-                        <p class="bold-text">08 de Agosto </p>
-                        <p class="normal-text">Estufa a leña Neoflam grande</p>
-                        <p class="normal-text">n°12345678900909</p>
-                    </div>
-                    <div class="date-card-row-container">
-                        <p class="normal-text">Cantidad de unidades </p>
-                        <p class="bold-text">01</p>
-                    </div>
-                    <div class="date-card-row-container">
-                        <p class="normal-text">Venta realizada a:</p>
-                        <p class="bold-text">Daniel Armas Castillo F.</p>
-                        <p class="normal-text">+56912345678</p>
-                        <p class="normal-text">DArmasCasf@gmail.com</p>
-                    </div>
-                    <div>
-                        <button class="button" (click)="openDialog()">Ver venta</button>
-                    </div>
-                </div>
-            </div>
+        <div class="date-card-row" *ngFor="let item of sales">
+          <img
+            src="{{ ruta + item.product!.ProductImages!.at(0)!.filePath }}"
+            alt=""
+          />
+          <div class="date-card-row-container" style="flex: 3">
+            <p class="green-text">Venta {{ item.orderState?.stateOrder }}</p>
+            <p class="bold-text">
+              {{ item.createdAt | date : "dd / MM / yyyy" : "es" }}
+            </p>
+            <p class="normal-text">{{ item.product?.title?.toUpperCase() }}</p>
+            <p class="normal-text">n° 0000{{ item.id }}</p>
+          </div>
+          <div class="date-card-row-container">
+            <p class="normal-text">Cantidad de unidades</p>
+            <p class="bold-text">01</p>
+          </div>
+          <div class="date-card-row-container">
+            <p class="normal-text">Venta realizada a:</p>
+            <p class="bold-text">
+              {{ item.user?.firstName }} {{ item.user?.lastName }}
+            </p>
+            <p class="normal-text">+569{{ item.user?.phone }}</p>
+            <p class="normal-text">{{ item.user?.email }}</p>
+          </div>
+          <div style="height: 100%">
+            <button class="button" (click)="openDialog(item)">Ver venta</button>
+            <br />
+            <button
+              (click)="openDeliverDialog(item)"
+              *ngIf="item.orderStateId == 1"
+              class="button"
+            >
+              Entregada
+            </button>
+          </div>
+        </div>
+      </div>
 
-            <div class="date-card">
-                <div class="date-card-title">
-                    <p class="date-card-title-text">22 de julio</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1016" height="2" viewBox="0 0 1016 2" fill="none">
-                        <path d="M0 1H1056" stroke="#BE272D"/>
-                    </svg>
-                </div>
-                <div class="date-card-row">
-                    <img src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg" alt="">
-                    <div class="date-card-row-container">
-                        <p class="green-text">Venta entregada</p>
-                        <p class="bold-text">08 de Agosto </p>
-                        <p class="normal-text">Estufa a leña Neoflam grande</p>
-                        <p class="normal-text">n°12345678900909</p>
-                    </div>
-                    <div class="date-card-row-container">
-                        <p class="normal-text">Cantidad de unidades </p>
-                        <p class="bold-text">01</p>
-                    </div>
-                    <div class="date-card-row-container">
-                        <p class="normal-text">Venta realizada a:</p>
-                        <p class="bold-text">Daniel Armas Castillo F.</p>
-                        <p class="normal-text">+56912345678</p>
-                        <p class="normal-text">DArmasCasf@gmail.com</p>
-                    </div>
-                    <div>
-                        <button class="button" (click)="openDialog()">Ver venta</button>
-                    </div>
-                </div>
-            </div>
+      <!--<div class="date-card">
+        <div class="date-card-title">
+          <p class="date-card-title-text">22 de julio</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1016"
+            height="2"
+            viewBox="0 0 1016 2"
+            fill="none"
+          >
+            <path d="M0 1H1056" stroke="#BE272D" />
+          </svg>
         </div>
+        <div class="date-card-row">
+          <img
+            src="assets/images/imagenes-productos/fotografi╠üa 1 estufa de len╠âa.jpg"
+            alt=""
+          />
+          <div class="date-card-row-container">
+            <p class="green-text">Venta entregada</p>
+            <p class="bold-text">08 de Agosto</p>
+            <p class="normal-text">Estufa a leña Neoflam grande</p>
+            <p class="normal-text">n°12345678900909</p>
+          </div>
+          <div class="date-card-row-container">
+            <p class="normal-text">Cantidad de unidades</p>
+            <p class="bold-text">01</p>
+          </div>
+          <div class="date-card-row-container">
+            <p class="normal-text">Venta realizada a:</p>
+            <p class="bold-text">Daniel Armas Castillo F.</p>
+            <p class="normal-text">+56912345678</p>
+            <p class="normal-text">DArmasCasf@gmail.com</p>
+          </div>
+          <div>
+            <button class="button" (click)="openDialog()">Ver venta</button>
+          </div>
+        </div>
+      </div>-->
     </div>
+  </div>
 </div>

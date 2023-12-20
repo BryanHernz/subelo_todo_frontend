@@ -1,32 +1,42 @@
 <div class="main-div">
-    <div class="title-container">
-        <p>Validar publicación</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
-    </div>
-    <p class="subtitle">Manta de lana de cachemira dos plazas  - $150.000 CLP</p>
-    <p class="normal-text">Precio referencial: $200.000</p>
-    <div class="images-container">
-        <img src="assets/images/imagenes-productos/manta.jpeg" alt="">
-        <img src="assets/images/imagenes-productos/manta2.png" alt="">
-        <img src="assets/images/imagenes-productos/manta.jpeg" alt="">
-        <img src="assets/images/imagenes-productos/manta2.png" alt="">
-        <img src="assets/images/imagenes-productos/manta.jpeg" alt="">
-        <img src="assets/images/imagenes-productos/manta2.png" alt="">
-    </div>
-    <p class="normal-text">Descripción de artículo:
-        <br><br>
-        Tiene 20 años, uso ocasional. Se realizó limpieza en cañón anual hasta 2021. Actualmente desinstalada. Incluye cañones para casa de 2 pisos, base acero Inox cuadrada para proteger el piso. Sirve para cualquier espacio del hogar.
+  <div class="title-container">
+    <p>Validar publicación</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <p class="subtitle">
+    {{ post.title.toUpperCase() }} -
+    {{ (post.price | currency : "CLP" : "$")?.replaceAll(",", ".") }} CLP
+  </p>
+  <p class="normal-text">
+    Precio referencial:
+    {{ (post.referencialPrice | currency : "CLP" : "$")?.replaceAll(",", ".") }}
+  </p>
+  <div class="images-container">
+    <img
+      *ngFor="let item of post.ProductImages"
+      src="{{ ruta + item.filePath }}"
+      alt=""
+    />
+  </div>
+  <p class="normal-text">
+    Descripción de artículo: <br /><br />
+    {{ post.description }}
+  </p>
+  <div class="info-container">
+    <p class="normal-text">Categoría: {{ post.category?.name }}</p>
+    <p class="normal-text">
+      Ubicación: {{ post.state?.name }}, {{ post.city?.name }}
     </p>
-    <div class="info-container">
-        <p class="normal-text">Categoría: Hogar</p>
-        <p class="normal-text">Ubicación: R.Metropolitana, Gran Santiago, San Bernardo</p>
-        <p class="normal-text">Estado de producto: Usado-Como nuevo</p>
-        <p class="normal-text">Medidas: 50 ancho, 63 fondo y 78 cm alto</p>
-        <p class="normal-text">Peso: 100 kilos</p>
-        <p class="normal-text">Estado: En venta</p>
-    </div>
-    <div class="buttons-container">
-        <button class="white-button" (click)="openRejectDialog()">Rechazar</button>
-        <button class="red-button" (click)="openDialog()">Validar</button>
-    </div>
+    <p class="normal-text">Estado de producto: {{ post.condition }}</p>
+    <p class="normal-text">
+      Medidas: {{ post.width }} ancho, {{ post.length }} fondo y
+      {{ post.height }} cm alto
+    </p>
+    <p class="normal-text">Peso: {{ post.weight }} kilos</p>
+    <p class="normal-text">Estado: {{ post.saleState }}</p>
+  </div>
+  <div class="buttons-container">
+    <button class="white-button" (click)="openRejectDialog()">Rechazar</button>
+    <button class="red-button" (click)="openDialog()">Validar</button>
+  </div>
 </div>

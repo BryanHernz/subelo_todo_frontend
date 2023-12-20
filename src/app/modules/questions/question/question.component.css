@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     width: 1439.935px;
     flex-shrink: 0;
     background: #F1F1F1;
@@ -6,7 +6,7 @@
     align-content: center;
 }
 
-.body-container{
+.body-container {
     margin-top: 80px;
     margin-left: 272.9675px;
     padding-bottom: 48px;
@@ -17,7 +17,7 @@
     gap: 40px;
 }
 
-.question-breadcrumb{
+.question-breadcrumb {
     padding-left: 40px;
     padding-top: 40px;
     height: 25px;
@@ -26,39 +26,41 @@
     gap: 22px;
 }
 
-.question-breadcrumb ul{
+.question-breadcrumb ul {
     display: inline-flex;
     align-items: flex-start;
     gap: 22px;
 }
 
-.question-breadcrumb li{
+.question-breadcrumb li {
     color: #BE272D;
     font-family: TitilliumWeb;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.question-breadcrumb a{
+.question-breadcrumb a {
     color: #BE272D;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.question-breadcrumb img{
+.question-breadcrumb img {
     width: 13.095px;
     height: 18.589px;
     fill: #BE272D;
 }
 
-.search-container{
+.search-container {
     display: flex;
     padding: 10px 20px;
     align-items: center;
@@ -69,11 +71,11 @@
     background: #FFF;
 }
 
-.search-container input{
+.search-container input {
     outline: none;
 }
 
-.content-container{
+.content-container {
     width: 975px;
     display: flex;
     padding: 20px 40px;
@@ -85,7 +87,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.content-container-mini{
+.content-container-mini {
     width: 975px;
     display: flex;
     padding: 20px 40px;
@@ -97,58 +99,62 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.title{
+.title {
     color: #000;
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
     align-self: stretch;
 }
 
-.content-text{
+.content-text {
     color: #000;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
 }
 
-.ref-image{
+.ref-image {
     display: flex;
     width: 889px;
     height: 361px;
     flex-direction: column;
     align-items: center;
+    object-fit: contain;
 }
 
-.steps-container{
+.steps-container {
     align-self: stretch;
     flex-direction: column;
     gap: 20px;
 }
 
-.step-container{
+.step-container {
     gap: 5px;
     display: flex;
     align-items: flex-start;
 }
 
-.step-number{
+.step-number {
     color: #BE272D;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
 }
 
-.step-description{
+.step-description {
     color: #000;
     font-family: Roboto;
     font-size: 20px;
@@ -158,7 +164,7 @@
     letter-spacing: 0.2px;
 }
 
-.higlight-text{
+.higlight-text {
     color: #000;
     font-family: Roboto;
     font-size: 20px;
@@ -170,13 +176,13 @@
     cursor: pointer;
 }
 
-.buttons-container{
+.buttons-container {
     display: flex;
     align-items: flex-start;
     gap: 77px;
 }
 
-.button{
+.button {
     display: flex;
     padding: 10px 100px;
     justify-content: center;
@@ -185,13 +191,13 @@
     height: 45px;
 }
 
-.cancel{
+.cancel {
     border-radius: 10px;
     border: 1px solid #BE272D;
     background: #FFF;
 }
 
-.cancel p{
+.cancel p {
     padding-top: 8px;
     color: #BE272D;
     text-align: center;
@@ -199,16 +205,17 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.next{
+.next {
     border-radius: 10px;
     background: #BE272D;
 }
 
-.next p{
+.next p {
     padding-top: 8px;
     color: #FFF;
     text-align: center;
@@ -216,6 +223,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }

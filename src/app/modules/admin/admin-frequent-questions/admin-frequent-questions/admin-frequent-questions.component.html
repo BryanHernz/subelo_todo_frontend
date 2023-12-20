@@ -1,34 +1,55 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-admin-vertical-menu></app-admin-vertical-menu>
+  <div class="lateral">
+    <app-admin-vertical-menu></app-admin-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="title-container">
+      <p class="main-title">Preguntas frecuentes</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="950"
+        height="2"
+        viewBox="0 0 950 2"
+        fill="none"
+      >
+        <path d="M0.11377 0.858582H1087.85" stroke="#BE272D" />
+      </svg>
     </div>
-    <div class="main-container">
-        <div class="title-container">
-            <p class="main-title">Preguntas frecuentes</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="950" height="2" viewBox="0 0 950 2" fill="none">
-                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
+    <div class="body-card">
+      <div class="card-contain" *ngFor="let item of preguntasfreq">
+        <div class="options">
+          <p class="title">{{ item.name }}</p>
+          <button (click)="addquestion(item)">Agregar</button>
+          <button (click)="editCategory(item)">Editar</button
+          ><button (click)="deleteCategory(item)">Eliminar</button>
+        </div>
+        <div class="form-field" *ngFor="let ask of item.faqs">
+          <div class="options" style="display: inline-flex">
+            <p class="form-field-label">{{ ask.question }}</p>
+            <button (click)="editquestion(ask)">Editar</button
+            ><button (click)="deletequestion(ask)">Eliminar</button>
+          </div>
+          <div class="hint-div">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="580"
+              height="2"
+              viewBox="0 0 580 2"
+              fill="none"
+            >
+              <path d="M0.0324707 0.876892H666.032" stroke="black" />
             </svg>
+          </div>
         </div>
-        <div class="body-card">
-            <div class="card-contain" *ngFor="let item of secciones">
-                <p class="title">{{item.nombre}}</p>
-                <div class="form-field" *ngFor="let ask of item.preguntas">
-                    <p class="form-field-label">{{ask}}</p>
-                    <div class="hint-div">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="580" height="2" viewBox="0 0 580 2" fill="none">
-                            <path d="M0.0324707 0.876892H666.032" stroke="black"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="buttons-container">
-                <button class="button cancel" >
-                    <p>Agregar pregunta frecuente</p>
-                </button>
-                <button class="button next" (click)="openDialog()">
+      </div>
+      <div class="buttons-container">
+        <button class="button cancel" (click)="addcategoryquestion()">
+          <p>Categoría de preguntas</p>
+        </button>
+        <!--<button class="button next" (click)="openDialog()">
                     <p>Editar preguntas frecuentes</p>
-                </button>
-            </div>
-        </div>
+                </button>-->
+      </div>
     </div>
+  </div>
 </div>

@@ -1,33 +1,55 @@
 <div class="main-div">
-    <div class="title-container">
-        <p>Ver más registro de venta</p>
-        <img src="assets/images/seller/x.svg" alt="" (click)="close()">
-    </div>
-    <p class="normal-text">Fecha de venta: <span class="subtitle">22.10.2023</span></p>
-    <p class="normal-text">Publicado por: <span class="subtitle">María Carmen de la Manzana</span></p>
-    <p class="normal-text">Teléfono: <span class="subtitle">+56912345678</span></p>
-    <p class="normal-text">Mail: <span class="subtitle">Maria.Carmen.M@gmail.com</span></p>
-    <p class="normal-text">Publicación: <span class="subtitle">Manta de lana de cachemira dos plazas</span></p>
-    <p class="normal-text">Precio: <span class="subtitle">$150.000 CLP</span></p>
-    <div class="images-container">
-        <img src="assets/images/imagenes-productos/manta.jpeg" alt="">
-        <img src="assets/images/imagenes-productos/manta2.png" alt="">
-        <img src="assets/images/imagenes-productos/manta.jpeg" alt="">
-        <img src="assets/images/imagenes-productos/manta2.png" alt="">
-        <img src="assets/images/imagenes-productos/manta.jpeg" alt="">
-        <img src="assets/images/imagenes-productos/manta2.png" alt="">
-    </div>
-    <p class="normal-text">Descripción de artículo:
-        <br><br>
-        Tiene 20 años, uso ocasional. Se realizó limpieza en cañón anual hasta 2021. Actualmente desinstalada. Incluye cañones para casa de 2 pisos, base acero Inox cuadrada para proteger el piso. Sirve para cualquier espacio del hogar.
+  <div class="title-container">
+    <p>Ver más registro de venta</p>
+    <img src="assets/images/seller/x.svg" alt="" (click)="close()" />
+  </div>
+  <p class="normal-text">
+    Fecha de venta:
+    <span class="subtitle">{{
+      order.createdAt | date : "dd/MM/yyyy" : "ES"
+    }}</span>
+  </p>
+  <p class="normal-text">
+    Publicado por:
+    <span class="subtitle"
+      >{{ order.product.user.firstName }}
+      {{ order.product.user.lastName }}</span
+    >
+  </p>
+  <p class="normal-text">
+    Teléfono: <span class="subtitle">{{ order.product.user.phone }}</span>
+  </p>
+  <p class="normal-text">
+    Mail: <span class="subtitle">{{ order.product.user.email }}</span>
+  </p>
+  <p class="normal-text">
+    Publicación:
+    <span class="subtitle">{{ order.product.title.toUpperCase() }}</span>
+  </p>
+  <p class="normal-text">Precio: <span class="subtitle">$150.000 CLP</span></p>
+  <div class="images-container">
+    <img
+      *ngFor="let item of order.product.ProductImages"
+      src="{{ ruta + item.filePath }}"
+      alt=""
+    />
+  </div>
+  <p class="normal-text">
+    Descripción de artículo: <br /><br />
+    {{ order.product.description }}
+  </p>
+  <div class="info-container2">
+    <p class="normal-text">Categoría: {{ order.product.category.name }}</p>
+    <p class="normal-text">
+      Ubicación: {{ order.product.state.name }}, {{ order.product.city.name }}
     </p>
-    <div class="info-container2">
-        <p class="normal-text">Categoría: Hogar</p>
-        <p class="normal-text">Ubicación: R.Metropolitana, Gran Santiago, San Bernardo</p>
-        <p class="normal-text">Estado de producto: Usado-Como nuevo</p>
-        <p class="normal-text">Medidas: 50 ancho, 63 fondo y 78 cm alto</p>
-        <p class="normal-text">Peso: 100 kilos</p>
-        <p class="normal-text">Estado: En venta</p>
-    </div>
-    <button class="red-button" (click)="close()">Aceptar</button>
+    <p class="normal-text">Estado de producto: {{ order.product.condition }}</p>
+    <p class="normal-text">
+      Medidas: {{ order.product.width }} ancho, {{ order.product.length }} fondo
+      y {{ order.product.height }} cm alto
+    </p>
+    <p class="normal-text">Peso: {{ order.product.weight }} kilos</p>
+    <p class="normal-text">Estado: {{ order.orderState.stateOrder }}</p>
+  </div>
+  <button class="red-button" (click)="close()">Aceptar</button>
 </div>

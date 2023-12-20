@@ -56,10 +56,11 @@
 .notification-row {
     display: flex;
     padding: 10px 20px;
-    align-items: flex-end;
     gap: 40px;
     width: 1060px;
     align-self: stretch;
+    align-items: center;
+    justify-items: center;
     border-radius: 10px;
     background: #FFF;
 }
@@ -67,6 +68,7 @@
 .notification-row img {
     width: 149.568px;
     height: 82px;
+    object-fit: contain;
 }
 
 .notification-time {
@@ -117,7 +119,8 @@
 
 .buttons-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
     gap: 16px;
 }
 

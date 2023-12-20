@@ -29,6 +29,10 @@
     flex-shrink: 0;
 }
 
+.options button {
+    cursor: pointer;
+}
+
 .main-title {
     height: 10px;
     color: #000;

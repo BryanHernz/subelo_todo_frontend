@@ -1,10 +1,10 @@
-.main-div{
+.main-div {
     width: 1440px;
     display: flex;
     background: #F1F1F1;
 }
 
-.lateral{
+.lateral {
     display: inline-flex;
     padding: 20px;
     flex-direction: column;
@@ -14,7 +14,7 @@
     flex-shrink: 0;
 }
 
-.main-container{
+.main-container {
     padding: 60px 35px;
     display: flex;
     flex-direction: column;
@@ -22,34 +22,35 @@
     align-items: center;
 }
 
-.title-container{
+.title-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 3px;
     flex-shrink: 0;
 }
 
-.main-title{
+.main-title {
     height: 10px;
     color: #000;
     font-family: Roboto;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 27.9px */
+    line-height: 155%;
+    /* 27.9px */
     letter-spacing: 0.18px;
     flex: 1 0 0;
     align-self: stretch;
 }
 
-.body{
+.body {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 22px;
 }
 
-.header-card{
+.header-card {
     display: flex;
     width: 1055px;
     padding: 20px;
@@ -59,13 +60,13 @@
     background: #FFF;
 }
 
-.header-card img{
+.header-card img {
     width: 40.775px;
     height: 40.775px;
     flex-shrink: 0;
 }
 
-.header.content{
+.header.content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -73,7 +74,7 @@
     flex: 1 0 0;
 }
 
-.red-text{
+.red-text {
     color: #BE272D;
     font-family: Inter;
     font-size: 16px;
@@ -83,7 +84,7 @@
     align-self: stretch;
 }
 
-.normal-text{
+.normal-text {
     color: #000;
     font-family: Inter;
     font-size: 16px;
@@ -94,18 +95,19 @@
     align-self: stretch;
 }
 
-.bold-text{
+.bold-text {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
     align-self: stretch;
 }
 
-.button{
+.button {
     display: flex;
     padding: 10px 100px;
     justify-content: center;
@@ -118,7 +120,7 @@
     background: #FFF;
 }
 
-.button p{
+.button p {
     padding-top: 8px;
     color: #BE272D;
     text-align: center;
@@ -126,11 +128,12 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.body-card{
+.body-card {
     display: flex;
     width: 1055px;
     padding: 20px;
@@ -141,63 +144,65 @@
     background: #FFF;
 }
 
-.row-post{
+.row-post {
     display: flex;
     align-items: center;
     gap: 40px;
     align-self: stretch;
 }
 
-.row-post img{
+.row-post img {
     width: 62.512px;
     height: 50px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-.row-post-name{
-    max-width: 217px;
-    overflow:auto;
+.row-post-name {
+    overflow: auto;
     color: #000;
     font-family: Roboto;
     font-size: 16px;
+    flex: 1;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }
 
-.date-location-container{
-    width: 167px;
+.date-location-container {
     height: 50px;
+    flex: 1;
 }
 
-.price-category-container{
-    width: 150px;
+.price-category-container {
+    flex: 1;
     height: 50px;
 }
 
 .date-location-container p,
-.price-category-container p{
+.price-category-container p {
     height: 15px;
     color: #000;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
     align-self: stretch;
 }
 
-.buttons-container{
+.buttons-container {
     display: flex;
     align-items: center;
     gap: 20px;
-    flex: 1 0 0;
+    flex: 1;
     align-self: stretch;
 }
 
-.row-button{
+.row-button {
     display: flex;
     padding: 10px 0px;
     justify-content: center;
@@ -214,6 +219,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
 }

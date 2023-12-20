@@ -11,6 +11,7 @@ import { CategoriesService } from 'src/app/services/categoryservice/categories.s
 import { CityService } from 'src/app/services/cityservice/city.service';
 import { ProductsService } from 'src/app/services/productsservice/products.service';
 import { StateService } from 'src/app/services/stateservice/state.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sell',
@@ -40,7 +41,7 @@ export class SellComponent implements OnInit {
   selectedSub:string='- SUBCATEGORÍA -';
   selectedcon:string='- Condición del producto -';
   selectedest:string='- Estado de la venta -';
-  ruta:string='http://localhost:8000/'
+  ruta:string=environment.imagesUrl
 
   multipleImages = [];
 
@@ -115,7 +116,7 @@ export class SellComponent implements OnInit {
             'referencialPrice':this.newprod.value.referencialPrice??null,
             'price':this.newprod.value.price!,
             'discount':this.newprod.value.referencialPrice?(((this.newprod.value.referencialPrice-this.newprod.value.price)*100)/this.newprod.value.referencialPrice):0,
-            'aproved':false,
+            'approved':false,
             'userId':parseInt(localStorage.getItem("userId")!),
             'height':this.newprod.value.altura??null,
             'stock':this.newprod.value.stock??1,

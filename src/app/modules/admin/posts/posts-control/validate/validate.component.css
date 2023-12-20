@@ -73,6 +73,7 @@
 .images-container img {
     height: 101.006px;
     width: 72px;
+    object-fit: contain;
     flex: 1 0 0;
 }
 

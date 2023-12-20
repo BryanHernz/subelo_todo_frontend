@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     width: 1439.935px;
     flex-shrink: 0;
     background: #F1F1F1;
@@ -6,7 +6,7 @@
     align-content: center;
 }
 
-.body-container{
+.body-container {
     margin-left: 272.9675px;
     margin-bottom: 48px;
     display: flex;
@@ -17,19 +17,20 @@
     gap: 40px;
 }
 
-.main-title{
+.main-title {
     padding-top: 80px;
     color: #BE272D;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 31px */
+    line-height: 155%;
+    /* 31px */
     letter-spacing: 0.2px;
     align-self: stretch;
 }
 
-.search-container{
+.search-container {
     display: flex;
     padding: 10px 20px;
     align-items: center;
@@ -40,37 +41,39 @@
     background: #FFF;
 }
 
-.search-container input{
+.search-container input {
     outline: none;
+    border: none;
+    width: 100%;
 }
 
-.content{
+.content {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
 }
 
-.content-section{
+.content-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
 }
 
-.section-title{
+.section-title {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     align-self: stretch;
 }
 
-.section-title img{
+.section-title img {
     width: 29.276px;
     height: 24.668px;
 }
 
-.section-title p{
+.section-title p {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
@@ -81,7 +84,7 @@
     flex: 1 0 0;
 }
 
-.options-container{
+.options-container {
     display: flex;
     padding: 40px 20px;
     flex-direction: column;
@@ -92,7 +95,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.option-container{
+.option-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -101,14 +104,14 @@
     cursor: pointer;
 }
 
-.option-title{
+.option-title {
     display: flex;
     align-items: center;
-    align-self:stretch;
+    align-self: stretch;
     justify-content: space-between;
 }
 
-.option-title p{
+.option-title p {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
@@ -117,7 +120,7 @@
     line-height: normal;
 }
 
-.option-title img{
+.option-title img {
     width: 20.889px;
     height: 14.073px;
 }

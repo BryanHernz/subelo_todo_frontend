@@ -27,8 +27,8 @@
         </p>
         <p>Peso: {{ post.weight }} kilos</p>
         <p>Stock: {{ post.stock }}</p>
-        <p *ngIf="post.aproved">Estado: {{ post.saleState }}</p>
-        <p *ngIf="!post.aproved">Estado: Aprobación pendiente</p>
+        <p *ngIf="post.approved">Estado: {{ post.saleState }}</p>
+        <p *ngIf="!post.approved">Estado: Aprobación pendiente</p>
         <p>
           Precio referencial:
           {{
@@ -46,6 +46,7 @@
       <br /><br />
       {{ post.description }}
     </p>
+    <button (click)="showQuestions(post)" class="ask-button">Preguntas</button>
   </div>
   <div class="buttons-container">
     <button class="button-cancel" (click)="close()">Cancelar</button>

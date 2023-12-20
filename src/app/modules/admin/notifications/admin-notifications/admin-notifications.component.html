@@ -1,33 +1,54 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-admin-vertical-menu></app-admin-vertical-menu>
+  <div class="lateral">
+    <app-admin-vertical-menu></app-admin-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="title-container">
+      <p class="main-title">Notificaciones</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1050"
+        height="2"
+        viewBox="0 0 1050 2"
+        fill="none"
+      >
+        <path d="M0.11377 0.858582H1087.85" stroke="#BE272D" />
+      </svg>
     </div>
-    <div class="main-container">
-        <div class="title-container">
-            <p class="main-title">Notificaciones</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1050" height="2" viewBox="0 0 1050 2" fill="none">
-                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
-            </svg>
-        </div>
-        <div class="header-buttons-row">
+    <!--<div class="header-buttons-row">
             <button class="button-header">Todas</button>
             <button class="button-header">No leídas</button>
+        </div>-->
+    <div class="body-container">
+      <div class="notification-row" *ngFor="let item of notificaciones">
+        <img
+          src="{{ ruta + (item.product!.ProductImages?.at(0))!.filePath }}"
+          alt=""
+        />
+        <div class="info-column">
+          <p class="notification-time">{{ item.createdAt }}</p>
+          <p class="normal-text">
+            La {{ item.type }} de
+            <span class="bold-text">{{ item.product?.title }}</span> ha sido
+            {{ item.state }}, comunícate con el {{ item.support }} para saber
+            más información...
+          </p>
         </div>
-        <div class="body-container">
-            <div class="notification-row" *ngFor="let item of notifications">
-                <img src="assets/images/imagenes-productos/fotografi╠üa 4 estufa de len╠âa.jpg" alt="">
-                <div class="info-column">
-                    <p class="notification-time">{{item}}</p>
-                    <p class="normal-text">La venta <span class="bold-text">Estufa a leña Neoflam grande</span> ha sido cancelada, comunícate con el comprador para saber más información...</p>
-                </div>
-                <div class="buttons-x-container">
-                    <img src="assets/images/seller/x.svg" alt="">
-                    <div class="buttons-container">
-                        <button class="button" (click)="openSeeMoreDialog()">Ver más</button>
-                        <button class="button" (click)="openReadDialog()">Marcar Leído</button>
-                    </div>
-                </div>
-            </div>
-        </div>  
+        <div class="buttons-x-container">
+          <!--<img src="assets/images/seller/x.svg" alt="" />-->
+          <div class="buttons-container">
+            <button class="button" (click)="openSeeMoreDialog(item)">
+              Ver más
+            </button>
+            <button
+              class="button"
+              (click)="openReadDialog(item.id!.toString())"
+            >
+              Marcar Leído
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

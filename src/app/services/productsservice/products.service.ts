@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ResponseModel } from 'src/app/models/responseModel';
 import { ProductImageModel } from 'src/app/models/productImage';
 import { environment } from '../../../environments/environment';
+import { QuestionModel } from 'src/app/models/questionModel';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,24 @@ export class ProductsService {
   getProducts(){
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
     let direction=this.API_URI+'/products';
+    return this.http.get<ProductModel[]>(direction,{headers});
+  }
+
+  getProductsToApprove(){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/products/toApprove';
+    return this.http.get<ProductModel[]>(direction,{headers});
+  }
+
+  getProductsHome(){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/products/toHome';
+    return this.http.get<ProductModel[]>(direction,{headers});
+  }
+
+  getProductsDiscount(){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/products/toDiscount';
     return this.http.get<ProductModel[]>(direction,{headers});
   }
 
@@ -93,5 +112,17 @@ export class ProductsService {
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
     let direction=this.API_URI+'/productImages/byProductId/'+productId;
     return this.http.get<ProductImageModel[]>(direction,{headers});
+  }
+
+  putQuestion(form:QuestionModel){
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/questions/'+form.id;
+    return this.http.put(direction,form,{headers});
+  }
+
+  postQuestion(form:QuestionModel):Observable<ResponseModel>{
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem("token"));
+    let direction=this.API_URI+'/questions/';
+    return this.http.post<ResponseModel>(direction,form,{headers});
   }
 }

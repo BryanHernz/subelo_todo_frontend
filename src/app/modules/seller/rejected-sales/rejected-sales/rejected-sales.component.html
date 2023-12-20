@@ -1,35 +1,50 @@
 <div class="main-div">
-    <div class="lateral">
-        <app-seller-vertical-menu></app-seller-vertical-menu>
+  <div class="lateral">
+    <app-seller-vertical-menu></app-seller-vertical-menu>
+  </div>
+  <div class="main-container">
+    <div class="title-container">
+      <p class="main-title">Ventas rechazadas</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1056"
+        height="2"
+        viewBox="0 0 1056 2"
+        fill="none"
+      >
+        <path d="M0.11377 0.858582H1087.85" stroke="#BE272D" />
+      </svg>
     </div>
-    <div class="main-container">
-        <div class="title-container">
-            <p class="main-title">Ventas rechazadas</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1056" height="2" viewBox="0 0 1056 2" fill="none">
-                <path d="M0.11377 0.858582H1087.85" stroke="#BE272D"/>
-            </svg>
+    <div class="body">
+      <div class="canceled-sale-card" *ngFor="let item of sales">
+        <img
+          src="{{ ruta + item.product?.ProductImages?.at(0)?.filePath }}"
+          alt=""
+        />
+        <div class="cancel-info">
+          <p class="red-text">Compra cancelada</p>
+          <p class="bold-text">
+            Se canceló el {{ item.updatedAt | date : "dd / MM / yyyy" : "es" }}
+          </p>
+          <p class="normal-text">{{ item.product?.title?.toUpperCase() }}</p>
+          <p class="normal-text">
+            Motivo de cancelación: {{ item.rejectedTitle }}
+          </p>
         </div>
-        <div class="body">
-            <div class="canceled-sale-card" *ngFor="let item of rejecteds">
-                <img src="assets/images/imagenes-productos/nikes.jpg" alt="">
-                <div class="cancel-info">
-                    <p class="red-text">Compra cancelada</p>
-                    <p class="bold-text">Se canceló el 20 Agosto </p>
-                    <p class="normal-text">Estufa a leña Neoflam </p>
-                    <p class="normal-text">Motivo de cancelación: No es lo que esperaba</p>
-                </div>
-                <div class="cancel-cant">
-                    <p class="normal-text">Cantidad de unidades</p>
-                    <p class="bold-text">01</p>
-                </div>
-                <div class="cancel-user">
-                    <p class="normal-text">Venta cancelada por:</p>
-                    <p class="bold-text">Camilo Fuenzalida Díaz</p>
-                    <p class="normal-text">+56912345678</p>
-                    <p class="normal-text">Cami.fuenza@gmail.com</p>
-                </div>
-                <button class="button" (click)="openDialog()">Ver más</button>
-            </div>
+        <div class="cancel-cant">
+          <p class="normal-text">Cantidad de unidades</p>
+          <p class="bold-text">01</p>
         </div>
+        <div class="cancel-user">
+          <p class="normal-text">Venta cancelada por:</p>
+          <p class="bold-text">
+            {{ item.user?.firstName }} {{ item.user?.lastName }}
+          </p>
+          <p class="normal-text">{{ item.product?.user?.phone }}</p>
+          <p class="normal-text">{{ item.product?.user?.email }}</p>
+        </div>
+        <button class="button" (click)="openDialog(item)">Ver más</button>
+      </div>
     </div>
+  </div>
 </div>

@@ -38,7 +38,7 @@
           <img src="{{ ruta + item.ProductImages!.at(0)?.filePath }}" alt="" />
           <p class="row-post-name">{{ item.title }}</p>
           <div class="date-location-container">
-            <p>Fecha: {{ item.createdAt | date : "dd.MM.yyyy" }}</p>
+            <p>Fecha: {{ item.createdAt | date : "dd / MM / yyyy" }}</p>
             <p>Comuna: {{ item.city!.name }}</p>
           </div>
           <div class="price-category-container">

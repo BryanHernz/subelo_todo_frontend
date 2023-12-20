@@ -24,6 +24,12 @@
     cursor: pointer;
 }
 
+.content-image-card img {
+    width: 100px;
+    height: 70px;
+    object-fit: contain;
+}
+
 .breadcrumb a {
     color: #BE272D;
     font-family: Roboto;

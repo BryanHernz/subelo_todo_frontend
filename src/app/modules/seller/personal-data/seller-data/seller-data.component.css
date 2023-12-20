@@ -1,11 +1,11 @@
-.main-div{
-    width: 1440px;
+.main-div {
+    max-width: 1440px;
     height: 875px;
     display: flex;
     background: #F1F1F1;
 }
 
-.lateral{
+.lateral {
     display: inline-flex;
     height: 875px;
     padding: 20px;
@@ -16,15 +16,15 @@
     flex-shrink: 0;
 }
 
-.main-container{
+.main-container {
     padding: 60px;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.content-container{
-    width: 894px;
+.content-container {
+    width: auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
     background: #ffffff;
 }
 
-.section-container{
+.section-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -40,40 +40,41 @@
     align-self: stretch;
 }
 
-.title-container{
+.title-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 3px;
     flex-shrink: 0;
 }
 
-.main-title{
+.main-title {
     height: 10px;
     color: #000;
     font-family: Roboto;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 27.9px */
+    line-height: 155%;
+    /* 27.9px */
     letter-spacing: 0.18px;
     flex: 1 0 0;
     align-self: stretch;
 }
 
-.title-row{
+.title-row {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     align-self: stretch;
 }
 
-.title-row img{
+.title-row img {
     width: 30px;
     height: 21.738px;
     flex-shrink: 0;
 }
 
-.title-row p{
+.title-row p {
     color: #BE272D;
     font-family: Inter;
     font-size: 18px;
@@ -84,7 +85,7 @@
     align-self: stretch;
 }
 
-.data-section{
+.data-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -92,14 +93,14 @@
     align-self: stretch;
 }
 
-.data-row{
+.data-row {
     display: flex;
     align-items: center;
     gap: 222px;
     align-self: stretch;
 }
 
-.data-name{
+.data-name {
     width: 222px;
     color: #000;
     font-family: Roboto;
@@ -110,7 +111,7 @@
     height: 19px;
 }
 
-.data{
+.data {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
@@ -121,7 +122,7 @@
     height: 19px;
 }
 
-.button-edit{
+.button-edit {
     align-self: flex-end;
     display: flex;
     width: 208px;
@@ -129,13 +130,13 @@
     height: 45px;
     justify-content: center;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
     border-radius: 10px;
     border: 1px solid #BE272D;
     background: #FFF;
 }
 
-.button-edit p{
+.button-edit p {
     padding-top: 8px;
     color: #BE272D;
     text-align: center;
@@ -143,6 +144,65 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 155%; /* 24.8px */
+    line-height: 155%;
+    /* 24.8px */
     letter-spacing: 0.16px;
+}
+
+@media (max-width: 1000px) {
+    .lateral {
+        display: none;
+    }
+
+    .content-container {
+        width: 95vh;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .title {
+        max-width: 90vw;
+        font-size: 17dvw;
+        line-height: 20dvw;
+        top: 50px;
+        height: auto;
+    }
+
+    .content {
+        max-width: 85vw;
+        right: 10vw;
+        height: auto;
+    }
+
+    .svg {
+        width: 90vw;
+        position: relative;
+        right: 0px;
+    }
+
+    .link-div {
+        max-width: 82vw;
+        right: 10vw;
+        height: auto;
+        gap: 15px;
+    }
+
+    .calltoaction {
+        width: 90vw;
+        align-self: center;
+        left: 5vw;
+        height: auto;
+    }
+
+    .custom,
+    .custom-input {
+        width: 80vw;
+    }
+
+    .link-div img {
+        width: 18vw;
+    }
+
 }

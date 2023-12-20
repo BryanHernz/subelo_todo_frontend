@@ -1,3 +1,4 @@
+import { ProductModel } from "./productModel";
 import { SubcategoryModel } from "./subcategoryModel";
 
 export interface CategoryModel{
@@ -5,6 +6,8 @@ export interface CategoryModel{
     name:String;
     subcategories?:SubcategoryModel[];
     logo?:String;
+    banner?:String;
+    products?:ProductModel[];
     createdAt?:Date;
     updatedAt?:Date;
     deletedAt?:Date;

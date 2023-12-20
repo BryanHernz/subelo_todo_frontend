@@ -1,0 +1,82 @@
+<body class="category-menu">
+  <div>
+    <button
+      [ngClass]="regiones ? 'switch-button' : 'switch-button-active'"
+      (click)="regiones = false"
+    >
+      <p
+        [ngClass]="
+          regiones ? 'switch-button-text' : 'switch-button-text-active'
+        "
+      >
+        Categorias
+      </p>
+    </button>
+    <button
+      [ngClass]="regiones ? 'switch-button-active' : 'switch-button'"
+      (click)="regiones = true"
+    >
+      <p
+        [ngClass]="
+          regiones ? 'switch-button-text-active' : 'switch-button-text'
+        "
+      >
+        Regiones
+      </p>
+    </button>
+  </div>
+  <div
+    class="category-content"
+    *ngIf="regiones == false"
+    fxLayout="column wrap"
+    style="height: 98%; margin-top: 0; gap: 0"
+  >
+    <div *ngFor="let categoria of categories" class="categoria">
+      <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+        <img
+          class="categoria-logo"
+          [src]="categoria.logo"
+          alt="Logo de categoría"
+        />
+        <p class="categoria-title">{{ categoria.name }}</p>
+      </div>
+      <div
+        class="subcategorias"
+        fxLayout="column wrap"
+        fxLayoutAlign="space-between"
+        fxFlex="auto"
+        fxLayoutGap="1rem"
+      >
+        <div
+          *ngFor="let subcategoria of categoria.subcategories"
+          class="subcategoria"
+        >
+          {{ subcategoria.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="category-content"
+    *ngIf="regiones == true"
+    fxLayout="column wrap"
+    style="height: 98%; margin-top: 0; gap: 0"
+  >
+    <div *ngFor="let region of states" class="categoria">
+      <div fxLayout="row" fxLayoutGap="12px" class="categoria-info">
+        <p class="categoria-title">{{ region.name }}</p>
+      </div>
+      <div
+        class="subcategorias"
+        fxLayout="column wrap"
+        fxLayoutAlign="space-between"
+        fxFlex="auto"
+        fxLayoutGap="1rem"
+      >
+        <div *ngFor="let comuna of region.cities" class="subcategoria">
+          {{ comuna.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
